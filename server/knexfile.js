@@ -6,7 +6,7 @@ module.exports = {
       host: "127.0.0.1",
       user: "root",
       password: "Kering225",
-      database: "pawUser",
+      database: "pawUsers",
       charset: "utf8"
     }
   }
