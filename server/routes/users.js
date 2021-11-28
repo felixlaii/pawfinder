@@ -1,19 +1,19 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const authorize = require("../middleware/authorize");
+// const userController = require('../controller/userController');
+const knex = require('knex')(require('../knexfile').development);
 
-const users = [
-    {
-      name: 'Luke Skywalker',
-      username: 'lovetheforce',
-      password: 'vaderiscool'
-    },
-    {
-      name: 'Anakin Skywalker',
-      username: 'sandsucks',
-      password: 'palpatineismean'
-    }
-  ];
+
+let users = []
+knex('users')
+.then((data) => {
+   users = data;
+})
+.catch((err) => 
+res.status(400).send(`error retrieving users`))
+
+//   router.route('/users').get(userController.index)
 
   router.get('/current', authorize, (req, res) => {
       const usernameFromToken = req.decoded.username;
@@ -85,6 +85,8 @@ const users = [
     const breed = req.body.breed;
     const age = req.body.age;
 
+ 
+
     if(!firstName || !lastName || !username || !password || !searchRadius || !animalType || !breed || !age) {
         return res.status(400).json({
             message: "registration requires all fields"
@@ -104,7 +106,22 @@ const users = [
         age: age
     }
 
-    users.push(newUser)
+    knex('users').insert({
+        firstName: newUser.firstName, 
+        lastName: newUser.lastName, 
+        username: newUser.username,
+        password: newUser.password,
+        searchRadius: newUser.searchRadius,
+        animalType: newUser.animalType,
+        breedType: newUser.breed,
+        age: newUser.age 
+    })
+    .then((_result) => {
+        knex('users')
+        .then((data) => {
+            users = data
+        })
+    })
     res.sendStatus(200)
   })
 
