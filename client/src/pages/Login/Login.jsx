@@ -7,13 +7,24 @@ function Login(props) {
 
     const handleLogin = (e) => {
         e.preventDefault()
-    }
+    
+
+    axios.post(`http:localhost:8080/users/login`, {
+        username: e.target.username.value,
+        password: e.target.password.value
+    })
+    .then(res => {
+        let token = res.data.token
+        sessionStorage.setItem('authToken', token)
+        props.history.push('/')
+    })
+}
 
     return (
         <div className="login-field">
             <h1 className="login-popup__header">Sign Up!</h1>
             <div className="login-popup__wrapper">
-                <form className="login-popup__form">
+                <form onSubmit={handleLogin} className="login-popup__form">
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
                     <button type="submit">Log In</button>
