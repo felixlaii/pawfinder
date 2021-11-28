@@ -9,7 +9,7 @@ function Login(props) {
         e.preventDefault()
     
 
-    axios.post(`http:localhost:8080/users/login`, {
+    axios.post(`http://localhost:8080/users/login`, {
         username: e.target.username.value,
         password: e.target.password.value
     })
@@ -22,7 +22,7 @@ function Login(props) {
 
     return (
         <div className="login-field">
-            <h1 className="login-popup__header">Sign Up!</h1>
+            <h1 className="login-popup__header">Log In</h1>
             <div className="login-popup__wrapper">
                 <form onSubmit={handleLogin} className="login-popup__form">
                     <Input label="Username" name="username" type="text" />
