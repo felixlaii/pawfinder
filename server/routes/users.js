@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const authorize = require("../middleware/authorize");
-// const userController = require('../controller/userController');
 const knex = require('knex')(require('../knexfile').development);
 
 
@@ -13,7 +12,6 @@ knex('users')
 .catch((err) => 
 res.status(400).send(`error retrieving users`))
 
-//   router.route('/users').get(userController.index)
 
   router.get('/current', authorize, (req, res) => {
       const usernameFromToken = req.decoded.username;
@@ -25,8 +23,6 @@ res.status(400).send(`error retrieving users`))
               message: "unable to find user"
           })
       }
-
-      //send back full user data
       return res.json({
         username: foundUser.username,
         name: foundUser.name
@@ -42,8 +38,6 @@ res.status(400).send(`error retrieving users`))
           })
       }
 
-      //username and password are provided
-
       const foundUser = users.find(user => user.username === username)
 
       if(!foundUser) {
@@ -52,17 +46,12 @@ res.status(400).send(`error retrieving users`))
           })
       }
 
-    // we are guaranteed to have the user here
-    // Validate password matches user's password
     if(foundUser.password !== password) {
-        //invalid password, return response
         return res.status(400).json({
             message: "invalid credentials, password does not match"
         })
     }
 
-    // it is a valid password at this point, 
-    // create and return JWT
     const token = jwt.sign(
         { username: username },
         process.env.JWT_SECRET_KEY,
@@ -85,16 +74,12 @@ res.status(400).send(`error retrieving users`))
     const breed = req.body.breed;
     const age = req.body.age;
 
- 
-
     if(!firstName || !lastName || !username || !password || !searchRadius || !animalType || !breed || !age) {
         return res.status(400).json({
             message: "registration requires all fields"
         })
     }
 
-    // at this point, we are guaranteed to have a 
-    // name, username, and password    
     const newUser = {
         firstName: firstName,
         lastName: lastName,
