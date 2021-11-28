@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const usersRoute = require('./routes/users')
 const knex = require('knex')(require('./knexfile').development);
-// const petRoute = require('./routes/petRoute')
 const cors = require('cors')
 
 require("dotenv").config();
@@ -14,7 +13,6 @@ app.use("/users", usersRoute);
 app.get('/users', (req, res) => {
   res.send('Welcome to my API');
 });
-// app.use("/petRoute", petRoute);
 
 app.listen(PORT, () => {
     console.log(`YOU GOT THIS BITCH!`);
