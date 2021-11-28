@@ -76,22 +76,32 @@ const users = [
   })
 
   router.post('/register', (req, res) => {
-    const name = req.body.name;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
     const username = req.body.username;
     const password = req.body.password;
+    const searchRadius = req.body.searchRadius;
+    const animalType = req.body.animalType;
+    const breed = req.body.breed;
+    const age = req.body.age;
 
-    if(!name || !username || !password) {
+    if(!firstName || !lastName || !username || !password || !searchRadius || !animalType || !breed || !age) {
         return res.status(400).json({
-            message: "registration requires name, username and password"
+            message: "registration requires all fields"
         })
     }
 
     // at this point, we are guaranteed to have a 
     // name, username, and password    
     const newUser = {
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
         username: username,
-        password: password
+        password: password,
+        searchRadius: searchRadius,
+        animalType: animalType,
+        breed: breed,
+        age: age
     }
 
     users.push(newUser)
