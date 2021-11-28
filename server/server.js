@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const usersRoute = require('./routes/users')
+const knex = require('knex')(require('./knexfile').development);
 // const petRoute = require('./routes/petRoute')
 const cors = require('cors')
 
@@ -10,6 +11,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use("/users", usersRoute);
+app.get('/users', (req, res) => {
+  res.send('Welcome to my API');
+});
 // app.use("/petRoute", petRoute);
 
 app.listen(PORT, () => {
