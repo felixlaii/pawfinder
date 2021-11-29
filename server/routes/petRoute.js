@@ -1,31 +1,27 @@
-const querystring = require("querystring");
-const { Curl } = require("node-libcurl");
-const terminate = curlTest.close.bind(curlTest);
+const router = require("express").Router();
+const axios = require('axios')
+require("dotenv").config();
+const BEARER_TOKEN = process.env.BEARER_TOKEN;
 
-const curlTest = new Curl();
+router.get('/', (req, res) => {
+	axios.get('https://api.petfinder.com/v2/animals', {
+		headers: {
+			 Authorization: `Bearer ${BEARER_TOKEN}`
+		}
+	}).then ((response) => {
+		 res.status(200).json(response.data)
+	}).catch ((error) => res.status(400).send({message: error}))
+})
 
-curlTest.setOpt(Curl.option.URL, "https://reqres.in/api/users");
-curlTest.setOpt(Curl.option.POST, true);
-curlTest.setOpt(
-	Curl.option.POSTFIELDS,
-	querystring.stringify({
-		name: "section",
-		job: "webdev",
-	})
-);
-curlTest.on("end", function (statusCode, data, headers) {
-	console.info("Status code " + statusCode);
-	console.info("***");
-	console.info("Our response: " + data);
-	console.info("***");
-	console.info("Length: " + data.length);
-	console.info("***");
-	console.info("Total time taken: " + this.getInfo("TOTAL_TIME"));
-
-	this.close();
-});
-curlTest.on("error", terminate);
-
-curlTest.perform();
+router.get('/organizations', (req, res) => {
+	axios.get('https://api.petfinder.com/v2/organizations', {
+		headers: {
+			 Authorization: `Bearer ${BEARER_TOKEN}`
+		}
+	}).then ((response) => {
+		 res.status(200).json(response.data)
+	}).catch ((error) => res.status(400).send({message: error}))
+})
 
 
+module.exports = router;
