@@ -64,6 +64,11 @@ res.status(400).send(`error retrieving users`))
     })
   })
 
+  router.get('/userpreferences/:userId', (req, res) => {
+      console.log(req.user)
+      knex('users').where('userId', req.params.userId).then((response) => res.send(response))
+  })
+
   router.post('/register', (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;

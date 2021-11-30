@@ -1,7 +1,9 @@
 @use "../../styles/partials/colors" as *;
 
 .home-page {
-
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
     &__hero {
         width: 60vw;
         height: 80vh;

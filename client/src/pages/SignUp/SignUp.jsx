@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import Input from '../../components/Input/Input'
 import React, {useState} from 'react'
 import Login from '../Login/Login'
