@@ -1,9 +1,15 @@
-import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Input from '../../components/Input/Input'
+import React, {useState} from 'react'
+import Login from '../Login/Login'
+
 
 function SignUp(props) {
+    const [isOpen, setIsOpen] = useState(false)
+    const togglePopUp = () => {
+        setIsOpen(!isOpen)
+    }
     const handleSignUp = (e) => {
         e.preventDefault()
 
@@ -44,6 +50,8 @@ function SignUp(props) {
                 </form>
                 <Link to='/login'>Login</Link>
             </div>
+
+            <Login />
         </div>
     )
 }
