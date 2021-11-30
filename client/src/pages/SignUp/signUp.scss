@@ -1,0 +1,18 @@
+.signup-popup {
+    border: 2px solid #E5DBCF; padding: 1rem;
+
+    &__header {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__label {
+        font-size: 5rem;
+    }
+
+}

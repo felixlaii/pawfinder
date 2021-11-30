@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Input from '../../components/Input/Input'
 import React, {useState} from 'react'
 import Login from '../Login/Login'
+import '../SignUp/signUp.scss'
+import '../../components/Input/input.scss'
 
 
 function SignUp(props) {
@@ -48,10 +50,9 @@ function SignUp(props) {
                     <button type="submit">Sign Up!</button>
 
                 </form>
-                <Link to='/login'>Login</Link>
-            </div>
 
             <Login />
+            </div>
         </div>
     )
 }

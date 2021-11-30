@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import './pageHeader.scss'
 import SignUp from '../../pages/SignUp/SignUp'
-import Login from '../../pages/Login/Login'
 
 import React, {useState} from 'react'
 
