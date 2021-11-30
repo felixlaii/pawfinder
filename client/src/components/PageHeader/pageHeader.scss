@@ -1,0 +1,18 @@
+@use "../../styles/partials/colors" as *;
+
+
+.page-header {
+    background-color: $headercolor;
+    height: 10vw;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-evenly;
+        color: $primarycolor;
+    }
+
+  
+}
