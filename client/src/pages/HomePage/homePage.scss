@@ -1,0 +1,10 @@
+@use "../../styles/partials/colors" as *;
+
+.home-page {
+
+    &__hero {
+        width: 60vw;
+        height: 80vh;
+        object-fit: fill;
+    }
+}

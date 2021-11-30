@@ -2,16 +2,28 @@
 
 
 .page-header {
-    background-color: $headercolor;
+    background-color: #FFFFFF;
     height: 10vw;
 
     &__list {
-        list-style: none;
         display: flex;
         flex-direction: row;
-        align-content: center;
         justify-content: space-evenly;
+    }
+
+    &__item {
+        list-style: none;
+        text-decoration: none;
         color: $primarycolor;
+    }
+
+    &__item:active {
+        color: $primarycolor;
+        text-decoration: none;
+    }
+
+    &__item:hover {
+        text-decoration: underline;
     }
 
   
