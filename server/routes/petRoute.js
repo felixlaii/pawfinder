@@ -23,5 +23,17 @@ router.get('/organizations', (req, res) => {
 	}).catch ((error) => res.status(400).send({message: error}))
 })
 
+router.get('/petpreference/:species/', (req, res) => {
+	axios.get('https://api.petfinder.com/v2/animals', {
+		headers: {
+			 Authorization: `Bearer ${BEARER_TOKEN}`
+		}
+	}).then ((response) => {
+		let filteredAnimals = response.data.animals.filter(animal => animal.type === req.params.species)
+		console.log(filteredAnimals)
+		 res.status(200).json(filteredAnimals)
+	}).catch ((error) => res.status(400).send({message: error}))
+})
+
 
 module.exports = router;
