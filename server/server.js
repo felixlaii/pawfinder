@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const usersRoute = require('./routes/users')
+const usersRoute = require('./routes/usersRoute')
 const petRoute = require('./routes/petRoute')
 const knex = require('knex')(require('./knexfile').development);
 const cors = require('cors')
