@@ -1,37 +1,33 @@
 @use "../../styles/partials/colors" as *;
 
-
 .page-header {
-    background-color: #FFFFFF;
-    height: 10vw;
+  background-color: #ffffff;
+  height: 10vw;
 
-    &__list {
-        padding-top: 3rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        text-decoration: none;
-        font-size: 2rem;
-    }
+  &__list {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-decoration: none;
+    font-size: 2rem;
+  }
 
-    &__item {
-        list-style: none;
-        text-decoration: none;
-        color: $primarycolor;
-    }
+  &__item {
+    list-style: none;
+    text-decoration: none;
+    color: $primarycolor;
+  }
 
-    &__item:link {
-        text-decoration: none;
-    }
+  &__item:link {
+    text-decoration: none;
+  }
 
-    &__item:active {
-        color: $primarycolor;
-        text-decoration: none;
-    }
-    &__item:hover {
-        text-decoration: underline;
-    }
-
-
-  
+  &__item:active {
+    color: $primarycolor;
+    text-decoration: none;
+  }
+  &__item:hover {
+    text-decoration: underline;
+  }
 }
