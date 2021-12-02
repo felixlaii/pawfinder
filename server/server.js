@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const usersRoute = require('./routes/usersRoute')
 const petRoute = require('./routes/petRoute')
+const searchRoute = require('./routes/searchRoute')
 const knex = require('knex')(require('./knexfile').development);
 const cors = require('cors')
 const axios = require('axios');
@@ -43,9 +44,9 @@ app.use(express.json());
 //     })
 // next()
 // })
-
 app.use("/users", usersRoute);
 app.use('/', petRoute)
+app.use('/search', searchRoute);
 app.get('/users', (req, res) => {
   res.send('Welcome to my API');
 });
