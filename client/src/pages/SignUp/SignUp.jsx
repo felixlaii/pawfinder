@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Input from '../../components/Input/Input'
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import Login from '../Login/Login'
 import '../SignUp/signUp.scss'
 import '../../components/Input/input.scss'
@@ -25,7 +26,7 @@ function SignUp(props) {
             age: e.target.age.value
         })
         .then(res => {
-            props.history.push('/login')
+            props.history.push('/results')
         })
     }
     return (
@@ -45,9 +46,9 @@ function SignUp(props) {
                     <Input label="Age" name="age" type="text" />
 
 
-
+                    <Link to ="/results">
                     <button type="submit">Sign Up!</button>
-
+                    </Link>
                 </form>
 
             <Login />

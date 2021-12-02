@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import Input from '../../components/Input/Input'
+
 import './login.scss'
 
 function Login(props) {
@@ -16,7 +18,6 @@ function Login(props) {
     .then(res => {
         let token = res.data.token
         sessionStorage.setItem('authToken', token)
-        props.history.push('/')
     })
 }
 
@@ -27,7 +28,9 @@ function Login(props) {
                 <form onSubmit={handleLogin} className="login-popup__form">
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
+                    <Link to="/results">
                     <button type="submit">Log In</button>
+                    </Link>
                 </form>
              
             </div>
