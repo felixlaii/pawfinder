@@ -3,13 +3,14 @@ import axios from 'axios'
 
 class ResultsPage extends React {
     state = {
-        animals: [],
+        animals: {},
         selectedAnimal: {}
     }
 
     componentDidMount() {
         axios.get(`http://localhost:8080`) 
             .then((response) => {
+                console.log(response.data)
                 this.setState({
                     selectedAnimal: response.data
                 })
