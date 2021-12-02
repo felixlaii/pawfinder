@@ -1,9 +1,9 @@
 import React from "react";
 
-function ResultsItem({ name, id, getUserPreferences }) {
+function ResultsItem({ name }) {
   return (
     <div>
-      <li onClick={() => getUserPreferences(id)}>{name}</li>
+      <li>{name}</li>
     </div>
   );
 }

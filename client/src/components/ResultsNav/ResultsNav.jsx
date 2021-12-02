@@ -1,19 +1,21 @@
 import React from "react";
 import ResultsItem from "../ResultsItem/ResultsItem";
 
-function ResultsNav({ animals, getUserPreferences }) {
+function ResultsNav({ animalList }) {
+  console.log(animalList)
   return (
     <div>
       <nav>
         <ul>
-          {animals.map((animal) => (
-            <ResultsItem
-              key={animal.id}
-              id={animal.id}
-              name={animal.name}
-              getUserPreferences={getUserPreferences}
-            />
-          ))}
+        <li>
+                     {animalList.map(animal => (
+                        <ResultsItem
+                        key={animal.id}
+                        id={animal.id}
+                        name={animal.name}
+                        /> 
+                    ))}   
+                </li>
         </ul>
       </nav>
     </div>

@@ -6,45 +6,54 @@ import ResultsNav from "../../components/ResultsNav/ResultsNav";
 
 class ResultsPage extends Component {
   state = {
-    animalList: [],
-    userPreferences: [],
+    animalList: null,
+    // userPreferences: {},
   };
 
-  getUserPreferences = (userId) => {
-    axios
-      .get(`http://localhost:8080/users/userpreferences/${userId}`)
-      .then((response) => {
-        console.log(response);
-        this.setState({
-          userPreferences: response.data,
-        });
-      })
-      .catch((error) => console.log(error));
-  };
+  // componentDidMount
+  // getUserPreferences = (userId) => {
+  //   axios
+  //     .get(`http://localhost:8080/users/userpreferences/${userId}`)
+  //     .then((response) => {
+  //       console.log(response);
+  //       this.setState({
+  //         userPreferences: response.data,
+  //       });
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
 
   componentDidMount() {
     axios
       .get(`http://localhost:8080`)
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.animals[0].name);
         this.setState({
-          animalList: response.data,
+          animalList: response.data.animals,
         });
-        const userId = this.props.match.params.userId || response.data[0];
+        // const userId = this.props.match.params.userId || response.data[0];
 
-        this.getUserPreferences(userId);
+        // this.getUserPreferences(userId);
       })
       .catch((error) => console.log(error));
   }
   render() {
-    const filteredAnimals = this.state.animalList.filter(
-      (animal) => animal.id !== this.state.userPreferences
-    );
+    // const filteredAnimals = this.state.animalList.filter(
+    //   (animal) => animal.id !== this.state.userPreferences
+    // );
+    if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
+
     return (
       <div className="results-page">
+
+{/* 
+        <ul>
+          <li>{this.state.animalList.name}</li>
+        </ul> */}
         <ResultsNav
-          animalList={filteredAnimals}
-          userPreferences={this.getUserPreferences}
+        animalList={this.state.animalList}
+          // animals={filteredAnimals}
+          // userPreferences={this.getUserPreferences}
         />
         {/* <DashBoard /> */}
       </div>
