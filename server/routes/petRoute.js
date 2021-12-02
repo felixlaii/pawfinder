@@ -8,6 +8,7 @@ const knex = require('knex')(require('../knexfile').development);
 router.get("/", (req, res) => {
   knex.select("*").from("token").orderBy("id", "desc").limit(1)
   .then((data) => {
+    data = data[0];
       axios
         .get("https://api.petfinder.com/v2/animals", {
           headers: {
@@ -25,6 +26,7 @@ router.get("/", (req, res) => {
 router.get("/organizations", (req, res) => {
   knex.select("*").from("token").orderBy("id", "desc").limit(1)
     .then((data) => {
+      data = data[0];
       axios
         .get("https://api.petfinder.com/v2/organizations", {
           headers: {
@@ -41,6 +43,7 @@ router.get("/organizations", (req, res) => {
 router.get("/petpreference/:species/", (req, res) => {
   knex.select("*").from("token").orderBy("id", "desc").limit(1)
     .then((data) => {
+      data = data[0];
       axios
         .get("https://api.petfinder.com/v2/animals", {
           headers: {
