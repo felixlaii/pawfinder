@@ -9,4 +9,28 @@
         height: 80vh;
         object-fit: fill;
     }
+
+    &__container {
+        display: flex;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 12rem;
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+
+        &-contact {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+
 }

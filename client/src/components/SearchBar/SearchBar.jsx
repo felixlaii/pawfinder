@@ -16,11 +16,13 @@ export default class SearchBar extends Component {
         })
     }
 
-    getAnimals = (searchQuery) => {
+    getAnimals = (e) => {
+        console.log(e)
+        const searchQuery = e.target.value
         axios
-            .get(`http://localhost:8080/search${searchQuery}`)
+            .get(`http://localhost:8080/search/${searchQuery}`)
             .then((response) => {
-                this.props.filterByQuery(this.state.query)
+                // this.props.filterByQuery(this.state.query)
                 console.log(response)
                 this.setState({
                     errorLoading: false,
@@ -40,8 +42,8 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div className="adoption-search">
-                <form onChange={this.handleQueryChange}>
-                    <input type="text" placeholder="find your pawfect friend..." className="adoption-search__input" value={this.state.searchQuery} onChange={this.getAnimals}/>
+                <form>
+                    <input type="text" placeholder="find your pawfect friend..." name="searchQuery" className="adoption-search__input" onChange={this.getAnimals}/>
                 </form>
         
             </div>
