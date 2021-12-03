@@ -1,8 +1,8 @@
 @use "../../styles/partials/colors" as *;
 
 .home-page {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    // margin-left: 1rem;
+    // margin-right: 1rem;
     
     &__hero {
         width: 60vw;
@@ -27,7 +27,15 @@
 
     &__footer {
         border: 2px solid #424C55;
+        height: 80vh;
         
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+       
     }
 
 
@@ -46,7 +54,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin-top: 10rem;
+        
     }
 
     &__saying {
