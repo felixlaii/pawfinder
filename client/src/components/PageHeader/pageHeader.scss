@@ -22,6 +22,13 @@
     list-style: none;
     text-decoration: none;
     color: $primarycolor;
+
+    &--divider {
+      list-style: none;
+      text-decoration: none;
+      color: $primarycolor;
+      font-size: 1rem;
+    }
   }
 
   &__item:link {
