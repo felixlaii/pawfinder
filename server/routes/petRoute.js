@@ -51,10 +51,9 @@ router.get("/petpreference/:species/", (req, res) => {
           },
         })
         .then((response) => {
-          let filteredAnimals = response.data.animals.filter(
-            (animal) => animal.type === req.params.species
-          );
-          console.log(filteredAnimals);
+          let filteredAnimals = response.data.animals.filter( 
+          (animal) => animal.type === req.params.species
+          ); 
           res.status(200).json(filteredAnimals);
         })
         .catch((error) => res.status(400).send({ message: error }));

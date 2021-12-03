@@ -50,7 +50,7 @@ app.use("/", (req, res, next) => {
 });
 app.use("/users", usersRoute);
 app.use("/", petRoute);
-app.use("/search", searchRoute);
+app.use("/", searchRoute);
 app.get("/users", (req, res) => {
   res.send("Welcome to my API");
 });

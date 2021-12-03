@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage'
 import ResultsPage from './pages/ResultsPage/ResultsPage'
 import DashBoard from './pages/Dashboard/Dashboard.jsx'
 import UserPref from './components/UserPref/UserPref.jsx'
+import SearchBar from './components/SearchBar/SearchBar'
 
 function App() {
     return (
@@ -13,8 +14,12 @@ function App() {
                 <Switch>
                     <Route path="/" exact component={HomePage} />
                     <Route path="/results" component={ResultsPage} />
+                    <Route path="/search" component={SearchBar} />
+
                     <Route path="/users" component={UserPref} />
                     <Route path="/dashboard" component={DashBoard} />
+             
+
 
 
                 </Switch>

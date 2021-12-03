@@ -1,7 +1,7 @@
 @use "../../styles/partials/colors" as *;
 
 .page-header {
-  background-color: #ffffff;
+  background-color: $primarylight;
   height: 10vw;
 
   &__list {
@@ -10,7 +10,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   &__item {

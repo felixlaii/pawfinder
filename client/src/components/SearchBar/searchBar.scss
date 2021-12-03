@@ -1,0 +1,9 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.adoption-search {
+    &__input {
+        border-radius: 1rem;
+        padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    }
+}
