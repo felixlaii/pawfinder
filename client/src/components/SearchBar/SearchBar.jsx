@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './searchBar.scss'
-import ResultsNav from '../../components/ResultsNav/ResultsNav'
+import GalleryList from '../GalleryList/GalleryList'
+import GalleryListItem from '../GalleryListItem/GalleryListItem'
 
 export default class SearchBar extends Component {
     state = {
@@ -14,6 +16,7 @@ export default class SearchBar extends Component {
         this.setState({
             searchQuery: e.target.value,
         })
+       
     }
 
     getAnimals = (e) => {
@@ -21,7 +24,7 @@ export default class SearchBar extends Component {
         const searchQuery = e.target.value
         axios
             .get(`http://localhost:8080/search/${searchQuery}`)
-            .then((response) => {
+            .then((response) => { console.log(response)
                 this.setState({
                     errorLoading: false,
                     searchQuery: searchQuery,
@@ -35,14 +38,22 @@ export default class SearchBar extends Component {
             })
     }
 
-
-
     render() {
         return (
             <div className="adoption-search">
-                <form>
+                <form action="/gallery">
                     <input type="text" placeholder="find your pawfect friend..." name="searchQuery" className="adoption-search__input" onChange={this.getAnimals}/>
                 </form>
+                <div className="adoption-search__results">
+                    {this.state.query ? (
+                        <GalleryList animalList={this.state.animalList} />
+                        ) : (
+                            <p>Please enter a search term above</p>
+                        )}
+                    {this.state.errorLoading && (
+                            <p>There was an error loading your search results</p>
+                    )}
+                </div>
         
             </div>
           

@@ -5,6 +5,8 @@ import ResultsPage from './pages/ResultsPage/ResultsPage'
 import DashBoard from './pages/Dashboard/Dashboard.jsx'
 import UserPref from './components/UserPref/UserPref.jsx'
 import SearchBar from './components/SearchBar/SearchBar'
+import Gallery from './components/GalleryList/GalleryList.jsx'
+import GalleryListItem from './components/GalleryListItem/GalleryListItem'
 
 function App() {
     return (
@@ -15,6 +17,10 @@ function App() {
                     <Route path="/" exact component={HomePage} />
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/search" component={SearchBar} />
+                    <Route path="/search/:searchQuery" component={Gallery} />
+                    <Route path="/gallery" component={GalleryListItem} />
+
+
 
                     <Route path="/users" component={UserPref} />
                     <Route path="/dashboard" component={DashBoard} />
