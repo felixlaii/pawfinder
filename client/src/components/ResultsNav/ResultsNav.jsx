@@ -8,7 +8,7 @@ function ResultsNav({ animalList }) {
         <ul className="results-item__list">
           <li className="results-item__item">
             {animalList.map((animal) => (
-              <ResultsItem key={animal.id} id={animal.id} name={animal.name} age={animal.age} />
+              <ResultsItem key={animal.id} id={animal.id} name={animal.name} age={animal.age} photos={animal.photos}/>
             ))}
           </li>
         </ul>

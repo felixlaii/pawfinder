@@ -2,6 +2,7 @@ import React from 'react'
 import GalleryItem from '../GalleryListItem/GalleryListItem'
 
 function GalleryList({animalList}) {
+  console.log(animalList)
     return (
         <div>
               <nav>

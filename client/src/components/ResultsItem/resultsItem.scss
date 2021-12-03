@@ -10,6 +10,10 @@
 
     }
 
+    // &__wrapper {
+    //     overflow: auto;
+    // }
+
     &__info {
         display: flex;
         flex-direction: row;
@@ -17,14 +21,12 @@
     }
 
     &__card {
-        display: flex;
-        flex-direction: flex-wrap;
         border: 1px solid #000000;
         margin-top: 1rem;
         margin-left: 1rem;
         border-radius: 6px;
         width: 27vw;
-        // overflow: hidden;
+        overflow: auto;
     }
 
     &__item {

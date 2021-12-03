@@ -8,7 +8,7 @@ import GalleryListItem from '../GalleryListItem/GalleryListItem'
 export default class SearchBar extends Component {
     state = {
         searchQuery: "",
-        animalList: null,
+        animalList: [],
         errorLoading: false
     }
 
@@ -45,7 +45,7 @@ export default class SearchBar extends Component {
                     <input type="text" placeholder="find your pawfect friend..." name="searchQuery" className="adoption-search__input" onChange={this.getAnimals}/>
                 </form>
                 <div className="adoption-search__results">
-                    {this.state.query ? (
+                    {this.state.searchQuery ? (
                         <GalleryList animalList={this.state.animalList} />
                         ) : (
                             <p>Please enter a search term above</p>
