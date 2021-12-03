@@ -5,14 +5,17 @@
     
 
     &__list {
+        display: flex;
+        flex-wrap: wrap;
         list-style: none;
 
     }
 
     &__wrapper {
-        overflow: hidden;
-        overflow-x: auto;
-        overflow-y: auto;
+        // overflow: hidden;
+        // overflow-x: auto;
+        // overflow-y: auto;
+        flex: grid;
     }
 
     &__info {
@@ -31,8 +34,7 @@
     }
 
     &__item {
-        display: flex;
-        flex-direction: flex-wrap;
+        flex-grow: 1;
         position: relative;
 
     }
