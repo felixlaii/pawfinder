@@ -17,8 +17,8 @@ function PageHeader() {
           <Link to="/">
             <li className="page-header__item">home</li>
           </Link>
-          <Link to="/gallery">
-            <li className="page-header__item">gallery</li>
+          <Link to="/results">
+            <li className="page-header__item">results</li>
           </Link>
 
           <Link to="/account">
