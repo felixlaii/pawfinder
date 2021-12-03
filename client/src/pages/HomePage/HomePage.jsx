@@ -29,6 +29,7 @@ function HomePage() {
             </div>
             <div className="home-page__about">
               <p className="home-page__slogan">pawfect friend</p>
+              <ion-icon size="small" name="paw-outline"></ion-icon>
             </div>
           </footer>
         </div>
