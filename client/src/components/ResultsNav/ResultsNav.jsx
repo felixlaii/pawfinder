@@ -5,10 +5,10 @@ function ResultsNav({ animalList }) {
   return (
     <div>
       <nav>
-        <ul>
-          <li>
+        <ul className="results-item__list">
+          <li className="results-item__item">
             {animalList.map((animal) => (
-              <ResultsItem key={animal.id} id={animal.id} name={animal.name} species={animal.species}/>
+              <ResultsItem key={animal.id} id={animal.id} name={animal.name} age={animal.age} />
             ))}
           </li>
         </ul>

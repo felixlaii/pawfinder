@@ -27,7 +27,7 @@ class ResultsPage extends Component {
     axios
       .get(`http://localhost:8080`)
       .then((response) => {
-        console.log(response.data.animals[0].name);
+        console.log(response.data);
         this.setState({
           animalList: response.data.animals,
         });

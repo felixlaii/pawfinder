@@ -1,0 +1,47 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.results-item {
+    
+
+    &__list {
+        list-style: none;
+        // overflow: hidden;
+
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;        
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: flex-wrap;
+        border: 1px solid #000000;
+        margin-top: 1rem;
+        border-radius: 6px;
+        width: 27vw;
+        // overflow: hidden;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: flex-wrap;
+        position: relative;
+        // overflow: hidden;
+
+    }
+
+    &__image {
+        position: relative;
+        width: 20vw;
+        height: 20vh;
+        object-fit: fill;
+        border-radius: 6px;
+        padding-bottom: 1rem;
+        // overflow: hidden;
+
+    }
+}
