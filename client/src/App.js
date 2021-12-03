@@ -7,6 +7,7 @@ import UserPref from './components/UserPref/UserPref.jsx'
 import SearchBar from './components/SearchBar/SearchBar'
 import Gallery from './components/GalleryList/GalleryList.jsx'
 import GalleryListItem from './components/GalleryListItem/GalleryListItem'
+import AccountPage from './pages/AccountPage/AccountPage'
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/search" component={SearchBar} />
                     <Route path="/search/:searchQuery" component={Gallery} />
                     <Route path="/gallery" component={GalleryListItem} />
+                    <Route path="/account" component={AccountPage} />
 
 
 

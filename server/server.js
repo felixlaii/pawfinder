@@ -56,5 +56,5 @@ app.get("/users", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`${PORT}`);
+  console.log(`killl it queen ${PORT}`);
 });
