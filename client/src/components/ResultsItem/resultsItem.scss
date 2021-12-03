@@ -6,13 +6,14 @@
 
     &__list {
         list-style: none;
-        // overflow: hidden;
 
     }
 
-    // &__wrapper {
-    //     overflow: auto;
-    // }
+    &__wrapper {
+        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
 
     &__info {
         display: flex;
@@ -26,14 +27,13 @@
         margin-left: 1rem;
         border-radius: 6px;
         width: 27vw;
-        overflow: auto;
+        // overflow: auto;
     }
 
     &__item {
         display: flex;
         flex-direction: flex-wrap;
         position: relative;
-        // overflow: hidden;
 
     }
 
@@ -44,7 +44,6 @@
         object-fit: fill;
         border-radius: 6px;
         padding-bottom: 1rem;
-        // overflow: hidden;
 
     }
 }

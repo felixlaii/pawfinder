@@ -14,21 +14,24 @@ function HomePage() {
             <div className="home-page__title">
               <h1 className="home-page__header">socials</h1>
               <div className="home-page__socials">
-              <ion-icon size="large" name="logo-twitter"></ion-icon>              
-              <ion-icon size="large" name="logo-instagram"></ion-icon>
-              <ion-icon size="large" name="logo-tiktok"></ion-icon>              
-              <ion-icon size="large" name="logo-facebook"></ion-icon>
+              <ion-icon size="large" name="logo-twitter" color="secondary"></ion-icon>              
+              <ion-icon size="large" name="logo-instagram" color="secondary"></ion-icon>
+              <ion-icon size="large" name="logo-tiktok" color="secondary"></ion-icon>              
+              <ion-icon size="large" name="logo-facebook" color="secondary"></ion-icon>
               </div>
             </div>
             <div className="home-page__title">
               <h1 className="home-page__header">contacts</h1>
               <div className="home-page__socials-contact">
-              <ion-icon size="large" name="logo-github"></ion-icon>
-              <ion-icon size="large" name="logo-linkedin"></ion-icon>
+              <ion-icon size="large" name="logo-github" color="secondary"></ion-icon>
+              <ion-icon size="large" name="logo-linkedin" color="secondary"></ion-icon>
               </div>
             </div>
+            <div className="home-page__motto">
+              <p className="home-page__saying">find your pawfect friend today!</p>
+            </div>
             <div className="home-page__about">
-              <p className="home-page__slogan">pawfect friend</p>
+              <p className="home-page__slogan">pawfinder</p>
               <ion-icon size="small" name="paw-outline"></ion-icon>
             </div>
           </footer>

@@ -14,7 +14,9 @@ function PageHeader() {
     <div className="page-header">
       <nav className="page-header__nav">
         <ul className="page-header__list">
+          <Link to='/'>
       <ion-icon size="large" name="paw-outline"></ion-icon>
+      </Link>
           <Link to="/">
             <li className="page-header__item">home</li>
           </Link>
