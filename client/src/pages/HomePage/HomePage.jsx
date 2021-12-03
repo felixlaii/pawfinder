@@ -14,17 +14,17 @@ function HomePage() {
             <div className="home-page__title">
               <h1 className="home-page__header">socials</h1>
               <div className="home-page__socials">
-              <ion-icon name="logo-twitter"></ion-icon>              
-              <ion-icon name="logo-instagram"></ion-icon>
-              <ion-icon name="logo-tiktok"></ion-icon>              
-              <ion-icon name="logo-facebook"></ion-icon>
+              <ion-icon size="large" name="logo-twitter"></ion-icon>              
+              <ion-icon size="large" name="logo-instagram"></ion-icon>
+              <ion-icon size="large" name="logo-tiktok"></ion-icon>              
+              <ion-icon size="large" name="logo-facebook"></ion-icon>
               </div>
             </div>
             <div className="home-page__title">
               <h1 className="home-page__header">contacts</h1>
               <div className="home-page__socials-contact">
-              <ion-icon name="logo-github"></ion-icon>
-              <ion-icon name="logo-linkedin"></ion-icon>
+              <ion-icon size="large" name="logo-github"></ion-icon>
+              <ion-icon size="large" name="logo-linkedin"></ion-icon>
               </div>
             </div>
             <div className="home-page__about">
