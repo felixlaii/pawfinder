@@ -29,7 +29,7 @@ function PageHeader() {
 
           <li className="page-header__item--divider">/</li>
 
-          <Link to="/account">
+          <Link to="/dashboard">
             <li className="page-header__item">account</li>
           </Link>
           

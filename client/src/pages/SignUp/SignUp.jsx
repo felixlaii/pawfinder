@@ -1,13 +1,11 @@
 import axios from 'axios'
 import Input from '../../components/Input/Input'
 import { Link } from 'react-router-dom'
-// import Login from '../Login/Login'
 import '../SignUp/signUp.scss'
 import '../../components/Input/input.scss'
 import SignUpHero from '../../assets/images/signin-hero.jpeg'
 import SignUpIcon from '../../assets/icons/kitty-signup.png'
 import '../../components/Input/input.scss'
-
 
 function SignUp(props) {
 
@@ -25,7 +23,7 @@ function SignUp(props) {
             age: e.target.age.value
         })
         .then(res => {
-            props.history.push('/results')
+            props.history.push('/login')
         })
     }
     return (
@@ -66,9 +64,7 @@ function SignUp(props) {
                         <option value="cats">cats</option>
                     </select>
 
-                    <Link to ="/results">
                     <button type="submit">Sign Up!</button>
-                    </Link>
 
                     <Link to ="/login">
                     <button type="submit">log in</button>

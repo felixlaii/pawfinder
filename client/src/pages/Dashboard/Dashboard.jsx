@@ -17,6 +17,7 @@ class Dashboard extends React.Component {
                 }
             })
             .then(res => {
+                console.log(res.data.name)
                 this.setState({
                     userInfo: res.data,
                     isLoading: false
@@ -40,7 +41,7 @@ class Dashboard extends React.Component {
         :
             (
                 <div className="paw-dashboard">
-                    <h2 className="paw-dashboard__loggedin">Welcome! {userInfo.name}</h2>
+                    <h2 className="paw-dashboard__loggedin">Welcome! {userInfo.username}</h2>
 
                     <button onClick={this.handleLogOut}>Log Out</button>
 
