@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./pageHeader.scss";
 import SignUp from "../../pages/SignUp/SignUp";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import {PawLogo} from '../../assets/logos/PawLogo.png'
+import PawLogo from '../../assets/logos/PawLogo.png'
 import React, { useState } from "react";
 
 function PageHeader() {
