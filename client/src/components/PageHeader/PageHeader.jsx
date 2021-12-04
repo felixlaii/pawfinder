@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./pageHeader.scss";
 import SignUp from "../../pages/SignUp/SignUp";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import {PawLogo} from '../../assets/logos/PawLogo.png'
 
 import React, { useState } from "react";
 
@@ -15,7 +16,7 @@ function PageHeader() {
       <nav className="page-header__nav">
         <ul className="page-header__list">
           <Link to='/'>
-      <ion-icon size="large" name="paw-outline"></ion-icon>
+      <img className="page-header__logo" src={PawLogo} alt="page logo" />
       </Link>
           <Link to="/">
             <li className="page-header__item">home</li>

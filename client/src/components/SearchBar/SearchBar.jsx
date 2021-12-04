@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './searchBar.scss'
-import GalleryList from '../GalleryList/GalleryList'
-import GalleryListItem from '../GalleryListItem/GalleryListItem'
+import ResultsNav from '../../components/ResultsNav/ResultsNav'
 
 export default class SearchBar extends Component {
     state = {
         searchQuery: "",
-        animalList: [],
+        animalList: null,
         errorLoading: false
     }
 
@@ -16,15 +14,14 @@ export default class SearchBar extends Component {
         this.setState({
             searchQuery: e.target.value,
         })
-       
     }
 
-    getAnimals = (e) => {
-        console.log(e)
-        const searchQuery = e.target.value
+    getAnimals = (searchQuery) => {
         axios
-            .get(`http://localhost:8080/search/${searchQuery}`)
-            .then((response) => { console.log(response)
+            .get(`http://localhost:8080/search${searchQuery}`)
+            .then((response) => {
+                this.props.filterByQuery(this.state.query)
+                console.log(response)
                 this.setState({
                     errorLoading: false,
                     searchQuery: searchQuery,
@@ -38,22 +35,14 @@ export default class SearchBar extends Component {
             })
     }
 
+
+
     render() {
         return (
             <div className="adoption-search">
-                <form action="/gallery">
-                    <input type="text" placeholder="find your pawfect friend..." name="searchQuery" className="adoption-search__input" onChange={this.getAnimals}/>
+                <form onChange={this.handleQueryChange}>
+                    <input type="text" placeholder="find your pawfect friend..." className="adoption-search__input" value={this.state.searchQuery} onChange={this.getAnimals}/>
                 </form>
-                <div className="adoption-search__results">
-                    {this.state.searchQuery ? (
-                        <GalleryList animalList={this.state.animalList} />
-                        ) : (
-                            <p>Please enter a search term above</p>
-                        )}
-                    {this.state.errorLoading && (
-                            <p>There was an error loading your search results</p>
-                    )}
-                </div>
         
             </div>
           

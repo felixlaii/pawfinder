@@ -11,12 +11,12 @@
 
     }
 
-    &__wrapper {
-        // overflow: hidden;
-        // overflow-x: auto;
-        // overflow-y: auto;
-        flex: grid;
-    }
+    // &__wrapper {
+    //     // overflow: hidden;
+    //     // overflow-x: auto;
+    //     // overflow-y: auto;
+    //     // flex: grid;
+    // }
 
     &__info {
         display: flex;
@@ -46,6 +46,7 @@
         object-fit: fill;
         border-radius: 6px;
         padding-bottom: 1rem;
+        vertical-align: bottom;
 
     }
 }
