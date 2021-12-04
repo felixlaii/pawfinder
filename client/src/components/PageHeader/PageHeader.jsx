@@ -34,13 +34,17 @@ function PageHeader() {
           </Link>
           
           <li className="page-header__item--divider">/</li>
+          
+          <Link to="/login">
+          <li className="page-header__item">sign in</li>
+          </Link>
 
-          <div className="page-header__modal">
-            <li onClick={togglePopUp} className="page-header__item">
-              sign in & sign up
-            </li>
-            {isOpen && <SignUp />}
-          </div>
+          <li className="page-header__item--divider">/</li>
+
+          <Link to="/signup">
+          <li className="page-header__item">sign up</li>
+          </Link>
+
             <li className="page-header__item">  <SearchBar /> </li>
         </ul>
       </nav>

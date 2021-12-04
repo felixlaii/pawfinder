@@ -1,18 +1,42 @@
+@use "../../styles/partials/colors" as *;
+
 .signup-popup {
-    border: 2px solid #E5DBCF; padding: 1rem;
 
     &__header {
         font-size: 1.2rem;
         font-weight: 400;
+        color: $primarycolor;
+    }
+
+    &__titlewrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__icon {
+        width: 2rem;
+    }
+
+    &__form {
+        border: 2px solid #E5DBCF; padding: 1rem;
+        padding-left: 10rem;
+        padding-right: 10rem;
     }
 
     &__wrapper {
         display: flex;
         flex-direction: row;
+        width: 35vw;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     &__label {
         font-size: 5rem;
     }
 
+    &__hero {
+        height: 66vh;
+        width: 50vw;
+    }
 }

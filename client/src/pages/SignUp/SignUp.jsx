@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 import Login from '../Login/Login'
 import '../SignUp/signUp.scss'
 import '../../components/Input/input.scss'
+import SignUpHero from '../../assets/images/signin-hero.jpeg'
+import SignUpIcon from '../../assets/icons/kitty-signup.png'
+import '../../components/Input/input.scss'
 
 
 function SignUp(props) {
-    const [isOpen, setIsOpen] = useState(false)
-    const togglePopUp = () => {
-        setIsOpen(!isOpen)
-    }
+
     const handleSignUp = (e) => {
         e.preventDefault()
 
@@ -31,9 +31,14 @@ function SignUp(props) {
     }
     return (
         <div className="signup-popup">
-            <h1 className="signup-popup__header">Sign Up!</h1>
             <div className="signup-popup__wrapper">
                 <form onSubmit={handleSignUp} className="signup-popup__form">
+                <div className="signup-pop__titlewrapper">
+                    <h1 className="signup-popup__header">Sign Up!</h1>
+                    <div className="signup-popup__iconwrapper">
+                        <img className="signup-popup__icon" src={SignUpIcon} alt="sign up icon" />
+                    </div>
+                </div>
                     <Input label="First Name" name="firstName" type="text" />
                     <Input label="Last Name" name="lastName" type="text" />
 
@@ -41,20 +46,45 @@ function SignUp(props) {
                     <Input label="Password" name="password" type="password" />
 
                     <Input label="Search Radius" name="searchRadius" type="text" />
-                    <Input label="Animal Type" name="animalType" type="text" />
-                    <Input label="Breed" name="breed" type="text" />
-                    <Input label="Age" name="age" type="text" />
 
+                    <label className="input-field__label">Type of Animal</label>
+                    <select className="input-field__input" name="animalType">
+                        <option value="dogs">dogs</option>
+                        <option value="cats">cats</option>
+                    </select>
+
+
+                    <label className="input-field__label">select breed</label>
+                    <select className="input-field__input" name="breed">
+                        <option value="dogs">dogs</option>
+                        <option value="cats">cats</option>
+                    </select>
+
+
+                    <label className="input-field__label">select age</label>
+                    <select className="input-field__input" name="age">
+                        <option value="dogs">dogs</option>
+                        <option value="cats">cats</option>
+                    </select>
 
                     <Link to ="/results">
                     <button type="submit">Sign Up!</button>
                     </Link>
-                </form>
 
-            <Login />
+                    <Link to ="/login">
+                    <button type="submit">log in</button>
+                    </Link>
+
+                </form>
+                <div className="signup-popup__logo">
+                    <div className="signup-popup__logowrapper">
+                    <img className="signup-popup__hero" src={SignUpHero} alt="login hero image" />
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
 export default SignUp
+

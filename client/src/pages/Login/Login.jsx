@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import Input from '../../components/Input/Input'
-
 import './login.scss'
+import LoginHero from '../../assets/images/login-hero.jpeg'
+import SignInIcon from '../../assets/icons/dog-signin.png'
 
-function Login(props) {
-
-    const handleLogin = (e) => {
+export default class Login extends Component {
+    handleLogin = (e) => {
         e.preventDefault()
     
 
@@ -20,22 +20,38 @@ function Login(props) {
         sessionStorage.setItem('authToken', token)
     })
 }
-
+render() {
     return (
         <div className="login-popup">
-            <h1 className="login-popup__header">Log In</h1>
             <div className="login-popup__wrapper">
-                <form onSubmit={handleLogin} className="login-popup__form">
+                <form onSubmit={this.handleLogin} className="login-popup__form">
+                <div className="login-pop__titlewrapper">
+                    <h1 className="login-popup__header">Log In</h1>
+
+                <div className="login-popup__iconwrapper">
+                        <img className="login-popup__icon" src={SignInIcon} alt="sign up icon" />
+                    </div>
+
+                </div>
+
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
+                    
                     <Link to="/results">
-                    <button type="submit">Log In</button>
+                        <button type="submit">log in</button>
                     </Link>
+                    
+                    <Link to="/signup">
+                        <button type="submit">sign up</button>
+                    </Link>
+                   
                 </form>
+                <div className="login-popup__logo">
+                    <img className="login-popup__hero" src={LoginHero} alt="login hero image" />
+                </div>
              
             </div>
         </div>
     )
 }
-
-export default Login
+}

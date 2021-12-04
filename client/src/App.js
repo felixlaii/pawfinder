@@ -8,6 +8,9 @@ import SearchBar from './components/SearchBar/SearchBar'
 import Gallery from './components/GalleryList/GalleryList.jsx'
 import GalleryListItem from './components/GalleryListItem/GalleryListItem'
 import AccountPage from './pages/AccountPage/AccountPage'
+import Login from './pages/Login/Login'
+import SignUp from './pages/SignUp/SignUp'
+
 
 function App() {
     return (
@@ -16,6 +19,9 @@ function App() {
             <div className="App">
                 <Switch>
                     <Route path="/" exact component={HomePage} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/signup" component={SignUp} />
+
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/search" component={SearchBar} />
                     <Route path="/search/:searchQuery" component={Gallery} />
