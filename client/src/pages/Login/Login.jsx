@@ -37,7 +37,7 @@ render() {
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
                     
-                    <Link to="/results">
+                    <Link to="/dashboard">
                         <button type="submit">log in</button>
                     </Link>
                     

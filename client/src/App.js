@@ -22,6 +22,7 @@ function App() {
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={SignUp} />
 
+
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/search" component={SearchBar} />
                     <Route path="/search/:searchQuery" component={Gallery} />
