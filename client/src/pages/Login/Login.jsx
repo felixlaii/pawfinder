@@ -6,10 +6,9 @@ import './login.scss'
 import LoginHero from '../../assets/images/login-hero.jpeg'
 import SignInIcon from '../../assets/icons/dog-signin.png'
 
-export default class Login extends Component {
-    handleLogin = (e) => {
+export default function Login(props) {
+    const handleLogin = (e) => {
         e.preventDefault()
-    
 
     axios.post(`http://localhost:8080/users/login`, {
         username: e.target.username.value,
@@ -18,13 +17,14 @@ export default class Login extends Component {
     .then(res => {
         let token = res.data.token
         sessionStorage.setItem('authToken', token)
+        props.history.push('/dashboard')
     })
 }
-render() {
+// render() {
     return (
         <div className="login-popup">
             <div className="login-popup__wrapper">
-                <form onSubmit={this.handleLogin} className="login-popup__form">
+                <form onSubmit={handleLogin} action="/dashboard" className="login-popup__form">
                 <div className="login-pop__titlewrapper">
                     <h1 className="login-popup__header">Log In</h1>
 
@@ -37,9 +37,7 @@ render() {
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
                     
-                    <Link to="/dashboard">
                         <button type="submit">log in</button>
-                    </Link>
                     
                     <Link to="/signup">
                         <button type="submit">sign up</button>
@@ -54,4 +52,4 @@ render() {
         </div>
     )
 }
-}
+// }
