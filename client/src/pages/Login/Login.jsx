@@ -17,7 +17,7 @@ export default function Login(props) {
     .then(res => {
         let token = res.data.token
         sessionStorage.setItem('authToken', token)
-        props.history.push('/dashboard')
+        props.history.push(`/dashboard`)
     })
 }
 // render() {

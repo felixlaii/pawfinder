@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import DashboardNav from '../../components/DashboardNav/DashboardNav'
+import DashboardDetails from '../../components/DashboardDetails/DashboardDetails'
 
 class Dashboard extends React.Component {
     state = {
@@ -17,7 +19,7 @@ class Dashboard extends React.Component {
                 }
             })
             .then(res => {
-                console.log(res.data.name)
+                console.log('helllllllo', res.data)
                 this.setState({
                     userInfo: res.data,
                     isLoading: false
@@ -42,7 +44,10 @@ class Dashboard extends React.Component {
             (
                 <div className="paw-dashboard">
                     <h2 className="paw-dashboard__loggedin">Welcome! {userInfo.username}</h2>
-
+                <DashboardNav />
+                <DashboardDetails
+                userId = {this.state.userInfo.userId} 
+                />
                     <button onClick={this.handleLogOut}>Log Out</button>
 
                     

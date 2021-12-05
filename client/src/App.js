@@ -7,9 +7,9 @@ import UserPref from './components/UserPref/UserPref.jsx'
 import SearchBar from './components/SearchBar/SearchBar'
 import Gallery from './components/GalleryList/GalleryList.jsx'
 import GalleryListItem from './components/GalleryListItem/GalleryListItem'
-import AccountPage from './pages/AccountPage/AccountPage'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
+import DashboardDetails from './components/DashboardDetails/DashboardDetails.jsx'
 
 
 function App() {
@@ -27,12 +27,15 @@ function App() {
                     <Route path="/search" component={SearchBar} />
                     <Route path="/search/:searchQuery" component={Gallery} />
                     <Route path="/gallery" component={GalleryListItem} />
-                    <Route path="/account" component={AccountPage} />
 
 
 
                     <Route path="/users" component={UserPref} />
                     <Route path="/dashboard" component={DashBoard} />
+                    <Route path="/dashboard/:details" component={DashboardDetails} />
+
+
+
              
 
 

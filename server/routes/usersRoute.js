@@ -25,7 +25,8 @@ res.status(400).send(`error retrieving users`))
       }
       return res.json({
         username: foundUser.username,
-        name: foundUser.name
+        name: foundUser.name,
+        userId: foundUser.userId
       })
   })
 
@@ -63,6 +64,11 @@ res.status(400).send(`error retrieving users`))
         token: token
     })
   })
+
+  router.get('/allusers', (req, res) => {
+    console.log(req.user)
+    knex('users').then((response) => res.send(response))
+})
 
   router.get('/userpreferences/:userId', (req, res) => {
       console.log(req.user)
