@@ -7,55 +7,64 @@ import ResultsNav from "../../components/ResultsNav/ResultsNav";
 class ResultsPage extends Component {
   state = {
     animalList: null,
-    // userPreferences: {},
+    userPreferences: {},
   };
 
-  // componentDidMount
-  // getUserPreferences = (userId) => {
-  //   axios
-  //     .get(`http://localhost:8080/users/userpreferences/${userId}`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       this.setState({
-  //         userPreferences: response.data,
-  //       });
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+
+  getUserPreferences = (userId) => {
+    axios.get(`http://localhost:8080/users/userpreferences/${userId}`)
+        .then((response) => { console.log(response.data[0])
+            this.setState({
+                userPreferences: response.data[0]
+            })
+        })
+        .catch((error) => console.log(error))
+ }
+
+ componentDidMount() {
+  let token = sessionStorage.getItem('authToken')
+
+  if(!!token) {
+      axios.get(`http://localhost:8080/users/current`, {
+          headers: {
+              Authorization: `Bearer ${token}`
+          }
+      })
+      .then(res => {
+          this.setState({
+              userInfo: res.data,
+              isLoading: false
+          })
+      })
+  } else {
+      this.props.history.push('/login')
+  }
+}
 
   componentDidMount() {
     axios
       .get(`http://localhost:8080`)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           animalList: response.data.animals,
         });
-        // const userId = this.props.match.params.userId || response.data[0];
-
-        // this.getUserPreferences(userId);
+   
       })
       .catch((error) => console.log(error));
   }
   render() {
-    // const filteredAnimals = this.state.animalList.filter(
-    //   (animal) => animal.id !== this.state.userPreferences
-    // );
+    const { isLoading, userInfo } = this.state
+
     if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
 
-    return (
+    return isLoading ?
+    <h1>Loading...</h1>
+    :
+        (
       <div className="results-page">
-
-{/* 
-        <ul>
-          <li>{this.state.animalList.name}</li>
-        </ul> */}
         <ResultsNav
         animalList={this.state.animalList}
-          // animals={filteredAnimals}
-          // userPreferences={this.getUserPreferences}
         />
-        {/* <DashBoard /> */}
       </div>
     );
   }
