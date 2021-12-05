@@ -25,7 +25,8 @@ res.status(400).send(`error retrieving users`))
       }
       return res.json({
         username: foundUser.username,
-        name: foundUser.name,
+        firstName: foundUser.firstName,
+        lastName: foundUser.lastName,
         userId: foundUser.userId
       })
   })

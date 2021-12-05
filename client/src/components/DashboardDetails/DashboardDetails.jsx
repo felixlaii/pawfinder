@@ -31,8 +31,21 @@ export default class DashboardDetails extends Component {
         if(!this.state.userList) return <div><p>"loading..."</p></div>
         return (
             <div className="dashboard-details">
-                <p>{this.state.userPreferences.firstName}</p>
-                
+                <div className="dashboard-details__container">
+                    <div className="dashboard-details__account">
+                        <h2 className="dashboard-details__header">Account details</h2>
+                        <p>username: {this.state.userPreferences.username}</p>
+                        <p>first name: {this.state.userPreferences.firstName}</p>
+                        <p>last name: {this.state.userPreferences.lastName}</p>
+                    </div>
+                    <div className="dashboard-details__preferences">
+                    <h2 className="dashboard-details__header">Preferences</h2>
+                        <p>animal type: {this.state.userPreferences.animalType}</p>
+                        <p>animal breed: {this.state.userPreferences.breedType}</p>
+                        <p>animal age: {this.state.userPreferences.age}</p>
+                        <p>search radius: {this.state.userPreferences.searchRadius}</p>
+                    </div>
+                </div>
             </div>
         )
     }
