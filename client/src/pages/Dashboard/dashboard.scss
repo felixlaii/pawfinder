@@ -1,0 +1,20 @@
+@use "../../styles/partials/colors" as *;
+
+.paw-dashboard {
+
+    &__loggedin {
+        font-size: 1.3rem;
+        color: $primarycolor;
+    }
+
+    &__header {
+        display: flex;
+        margin-left: 2rem;
+        margin-top: 3rem;
+      
+    }
+
+    &__icon {
+        width: 2rem;
+    }
+}

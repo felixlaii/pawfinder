@@ -1,0 +1,33 @@
+@use "../../styles/partials/colors" as *;
+
+.dashboard-details {
+
+
+    &__container {
+        border: 2px solid #E5DBCF; padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        width: 25vw;
+        margin-left: 1rem;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__header {
+        font-size: 1rem;
+        color: $primarycolor;
+    }
+
+    &__image {
+        height: 66vh;
+        width: 55vw;
+    }
+
+    &__info {
+        font-size: 0.8rem;
+    }
+}

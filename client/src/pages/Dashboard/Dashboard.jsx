@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import DashboardDetails from '../../components/DashboardDetails/DashboardDetails'
+import AccountIcon from '../../assets/icons/account-icon.png'
+import './dashboard.scss'
 
 class Dashboard extends React.Component {
     state = {
@@ -42,7 +44,12 @@ class Dashboard extends React.Component {
         :
             (
                 <div className="paw-dashboard">
-                    <h2 className="paw-dashboard__loggedin">Welcome! {userInfo.firstName} {userInfo.lastName}</h2>
+                    <div className="paw-dashboard__header">
+                        <h2 className="paw-dashboard__loggedin">Welcome! {userInfo.firstName} {userInfo.lastName}</h2>
+                        <div className="paw-dashboard__wrapper">
+                        <img className="paw-dashboard__icon" src={AccountIcon} alt="account icon" />
+                        </div>
+                    </div>
                 <DashboardDetails
                 userId = {this.state.userInfo.userId} 
                 />
