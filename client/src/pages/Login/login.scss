@@ -2,7 +2,8 @@
 @use "../../styles/partials/colors" as *;
 
 .login-popup {
-    
+        height: 75vh;
+
     &__header {
         font-size: 1.2rem;
         font-weight: 400;
@@ -20,8 +21,8 @@
 
     &__form {
         border: 2px solid #E5DBCF; padding: 1rem;
-        padding-left: 10rem;
-        padding-right: 10rem;
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
     }
 
     &__wrapper {
@@ -36,8 +37,18 @@
         font-size: 5rem;
     }
 
+    &__button {
+        font-family: 'lemonmilk';
+        font-size: 0.8rem;
+        padding: 0.3rem 5rem 0.3rem 1.3rem;
+        border: none;
+        background-color: #FFFFFF;
+        color: $primarycolor;
+        text-decoration: underline;
+    }
+
     &__hero {
-        height: 66vh;
         width: 50vw;
+        object-fit: cover;
     }
 }

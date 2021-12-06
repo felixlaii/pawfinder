@@ -1,13 +1,13 @@
 @use "../../styles/partials/colors" as *;
 
 .home-page {
-    // margin-left: 1rem;
-    // margin-right: 1rem;
-    
+    height: 75vh;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
     &__hero {
-        width: 60vw;
-        height: 80vh;
-        object-fit: fill;
+        width: 50vw;
+        object-fit: cover;
     }
 
     &__container {
@@ -18,48 +18,30 @@
         color: $primarycolor;
     }
 
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 12rem;
-    }
 
     &__footer {
         border: 2px solid #424C55;
-        height: 80vh;
-        
+        width: 48%;
     }
-
-    &__title {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-       
-    }
-
 
     &__socials {
-        display: flex;
+        align-content: center;
         justify-content: space-between;
         margin-bottom: 5rem;
 
-        &-contact {
-            display: flex;
-            justify-content: space-evenly;
-        }
     }
 
     &__about {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        margin-top: 33rem;
         
     }
 
     &__saying {
-        font-size: 5rem;
+        display: flex;
+        justify-content: center;
+        font-size: 4rem;
     }
-
-
 }

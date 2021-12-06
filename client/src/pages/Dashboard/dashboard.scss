@@ -5,16 +5,27 @@
     &__loggedin {
         font-size: 1.3rem;
         color: $primarycolor;
+        margin-left: 5rem;
     }
 
     &__header {
         display: flex;
-        margin-left: 2rem;
         margin-top: 3rem;
-      
     }
 
     &__icon {
         width: 2rem;
+    }
+
+    &__button {
+        // justify-content: flex-end;
+        font-family: 'lemonmilk';
+        margin-left: 48rem;
+        font-size: 1rem;
+        padding: 0.3rem 5rem 0.3rem 1.3rem;
+        border: none;
+        background-color: #FFFFFF;
+        color: $primarycolor;
+        text-decoration: underline;
     }
 }

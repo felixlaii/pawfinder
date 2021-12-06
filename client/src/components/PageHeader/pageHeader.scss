@@ -2,7 +2,9 @@
 
 .page-header {
   background-color: $primarylight;
+  width: 80%;
   height: 10vw;
+  margin-right: 0;
 
   &__list {
     padding-top: 3rem;

@@ -64,10 +64,10 @@ function SignUp(props) {
                         <option value="cats">cats</option>
                     </select>
 
-                    <button type="submit">Sign Up!</button>
+                    <button className="signup-popup__button" type="submit">sign up</button>
 
                     <Link to ="/login">
-                    <button type="submit">log in</button>
+                    <button className="signup-popup__button" type="submit">log in</button>
                     </Link>
 
                 </form>

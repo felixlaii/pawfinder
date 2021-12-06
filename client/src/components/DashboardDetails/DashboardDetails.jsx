@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './dashboardDetails.scss'
 import DashboardHero from '../../assets/images/dashboard-hero.jpg'
 
@@ -44,6 +45,12 @@ export default class DashboardDetails extends Component {
                         <p className="dashboard-details__info">animal breed: {this.state.userPreferences.breedType}</p>
                         <p className="dashboard-details__info">animal age: {this.state.userPreferences.age}</p>
                         <p className="dashboard-details__info">search radius: {this.state.userPreferences.searchRadius}</p>
+                        <div className="dashboard-details__button">
+
+                            <Link to="/results">
+                            <button className="dashboard-details__preferences">view preferences</button>
+                            </Link>
+                        </div>
                 </div>
                     <div className="dashboard-details__hero">
                         <img className="dashboard-details__image" src={DashboardHero} alt="dashboard hero" />

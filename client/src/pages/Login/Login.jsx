@@ -36,12 +36,13 @@ export default function Login(props) {
 
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
-                    
-                        <button type="submit">log in</button>
+                    <div className="login-popup__submits">
+                        <button className="login-popup__button" type="submit">login</button>
                     
                     <Link to="/signup">
-                        <button type="submit">sign up</button>
+                        <button className="login-popup__button" type="submit">signup</button>
                     </Link>
+                    </div>
                    
                 </form>
                 <div className="login-popup__logo">

@@ -15,11 +15,11 @@ function PageHeader() {
             <li className="page-header__item">home</li>
           </Link>
 
-          <li className="page-header__item--divider">/</li>
+          {/* <li className="page-header__item--divider">/</li>
 
           <Link to="/results">
             <li className="page-header__item">results</li>
-          </Link>
+          </Link> */}
 
           <li className="page-header__item--divider">/</li>
 

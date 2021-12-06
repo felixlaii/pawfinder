@@ -34,6 +34,8 @@ class Dashboard extends React.Component {
     handleLogOut = (e) => {
         e.preventDefault()
 
+        sessionStorage.removeItem('authToken')
+
         this.props.history.push('/login')
     }
 
@@ -49,11 +51,12 @@ class Dashboard extends React.Component {
                         <div className="paw-dashboard__wrapper">
                             <img className="paw-dashboard__icon" src={AccountIcon} alt="account icon" />
                         </div>
+                        <button className="paw-dashboard__button" onClick={this.handleLogOut}>Log Out</button>
+
                     </div>
                 <DashboardDetails
                 userId = {this.state.userInfo.userId} 
                 />
-                    <button onClick={this.handleLogOut}>Log Out</button>
 
                     
                 </div>

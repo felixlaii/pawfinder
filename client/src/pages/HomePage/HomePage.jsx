@@ -6,11 +6,12 @@ function HomePage() {
   return (
     <div className="home-page">
       <div className="home-page__container">
-        <div className="home-page__banner">
+        {/* <div className="home-page__banner"> */}
           <img className="home-page__hero" src={HeroBanner} alt="Hero Banner" />
-        </div>
+        {/* </div> */}
         <div className="home-page__footer">
           <footer className="home-page__wrapper">
+            <div className="home-page__footerwrapper">
             <div className="home-page__title">
               <h1 className="home-page__header">socials</h1>
               <div className="home-page__socials">
@@ -33,6 +34,7 @@ function HomePage() {
             <div className="home-page__about">
               <p className="home-page__slogan">pawfinder</p>
               <ion-icon size="small" name="paw-outline"></ion-icon>
+            </div>
             </div>
           </footer>
         </div>
