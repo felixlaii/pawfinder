@@ -31,10 +31,11 @@ class ResultsPage extends Component {
           }
       })
       .then(res => {
-          this.setState({
+          this.setState({ 
               userInfo: res.data,
               isLoading: false
           })
+          getUserPreferences(userInfo)
       })
   } else {
       this.props.history.push('/login')
@@ -47,11 +48,12 @@ class ResultsPage extends Component {
       .then((response) => {
         this.setState({
           animalList: response.data.animals,
-        });
-   
+        })   
       })
       .catch((error) => console.log(error));
   }
+
+  
   render() {
     const { isLoading, userInfo } = this.state
 
