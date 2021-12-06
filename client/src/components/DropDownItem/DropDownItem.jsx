@@ -1,9 +1,10 @@
 import React from "react";
 
 
-function DropDownItem({ breed }) {
+function DropDownItem({ breed, species }) {
   return (
       <>
+        {/* <option value="species">{species}</option> */}
         <option value="breeds">{breed}</option>
     </>
   );

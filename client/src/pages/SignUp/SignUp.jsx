@@ -27,6 +27,10 @@ function SignUp(props) {
         })
     }
 
+    const animalSelect = () => {
+        
+    }
+
     return (
         <div className="signup-popup">
             <div className="signup-popup__wrapper">
@@ -44,12 +48,14 @@ function SignUp(props) {
                     <Input label="Password" name="password" type="password" />
 
                     <label className="input-field__label">Type of Animal</label>
-                    <select className="input-field__input" name="animalType">
+                    <select onChange={animalSelect} className="input-field__input" name="animalType">
                         <option value="dogs">Dogs</option>
                         <option value="cats">Cats</option>
                     </select>
 
-                    <DropDown />
+                    <DropDown 
+                    // selectedAnimal={}
+                    />
 
                     <label className="input-field__label">select age</label>
                     <select className="input-field__input" name="age">

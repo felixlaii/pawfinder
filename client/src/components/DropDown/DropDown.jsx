@@ -7,19 +7,20 @@ class DropDown extends Component {
     state = {
         animalList: null,
         breed: [],
+        cats: null,
+        dogs: null
     }
 
     componentDidMount() {
         axios.get(`http://localhost:8080`)
-            .then((response) => {
+            .then((response) => { console.log(response.data.animals[0].species)
                 this.setState({ 
                     animalList: response.data.animals,
                 })
             })
-           
             .catch((error) => (error))
     }
-    render() {
+    render() { 
         if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
 
         return (
