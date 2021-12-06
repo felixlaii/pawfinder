@@ -1,12 +1,16 @@
 import React from "react";
 import DropDownItem from '../DropDownItem/DropDownItem'
+import '../Input/input.scss'
 
 function DropDownNav({ animalList }) { 
   return (
     <div>
       <nav>
-        <ul className="dropdown-nav__list">
-          <li className="dropdown-nav__item">
+        <div className="dropdown-nav__list">
+        <label className="input-field__label">select breed</label>
+
+          <select className="input-field__input">
+           
             {animalList.map((animal) => (
               <DropDownItem
                 key={animal.id}
@@ -14,8 +18,9 @@ function DropDownNav({ animalList }) {
                 breed={animal.breeds.primary}
               />
             ))}
-          </li>
-        </ul>
+ 
+          </select>
+        </div>
       </nav>
     </div>
   );

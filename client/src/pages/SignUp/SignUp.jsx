@@ -6,6 +6,7 @@ import '../../components/Input/input.scss'
 import SignUpHero from '../../assets/images/signin-hero.jpeg'
 import SignUpIcon from '../../assets/icons/kitty-signup.png'
 import '../../components/Input/input.scss'
+import DropDown from '../../components/DropDown/DropDown'
 
 function SignUp(props) {
 
@@ -47,24 +48,17 @@ function SignUp(props) {
 
                     <label className="input-field__label">Type of Animal</label>
                     <select className="input-field__input" name="animalType">
-                        <option value="dogs">dogs</option>
-                        <option value="cats">cats</option>
+                        <option value="dogs">Dogs</option>
+                        <option value="cats">Cats</option>
                     </select>
 
-
-                    <label className="input-field__label">select breed</label>
-                    <select className="input-field__input" name="breed">
-                        <option value="Pit">dogs</option>
-                        <option value="cats">cats</option>
-                    </select>
-
+                    <DropDown />
 
                     <label className="input-field__label">select age</label>
                     <select className="input-field__input" name="age">
-                        <option value="Baby">dogs</option>
-                        <option value="Young">cats</option>
-                        <option value="Adult">cats</option>
-
+                        <option value="age">Baby</option>
+                        <option value="age">Young</option>
+                        <option value="age">Adult</option>
                     </select>
 
                     <button className="signup-popup__button" type="submit">sign up</button>
