@@ -1,7 +1,9 @@
 @use "../../styles/partials/colors" as *;
 
 .dashboard-details {
-
+    height: 75vh;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
     &__container {
         border: 2px solid #E5DBCF;
@@ -23,8 +25,7 @@
     }
 
     &__image {
-        height: 75vh;
-        width: 50vw;
+        width: 59vw;
     }
 
     &__info {
