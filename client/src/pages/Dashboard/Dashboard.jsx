@@ -20,7 +20,6 @@ class Dashboard extends React.Component {
                 }
             })
             .then(res => {
-                console.log('helllllllo', res.data)
                 this.setState({
                     userInfo: res.data,
                     isLoading: false

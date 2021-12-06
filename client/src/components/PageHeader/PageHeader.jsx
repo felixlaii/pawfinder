@@ -15,12 +15,6 @@ function PageHeader() {
             <li className="page-header__item">home</li>
           </Link>
 
-          {/* <li className="page-header__item--divider">/</li>
-
-          <Link to="/results">
-            <li className="page-header__item">results</li>
-          </Link> */}
-
           <li className="page-header__item--divider">/</li>
 
           <Link to="/dashboard">

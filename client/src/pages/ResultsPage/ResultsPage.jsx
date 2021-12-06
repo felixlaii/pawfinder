@@ -1,6 +1,5 @@
 import React from "react";
 import { Component } from "react";
-// import DashBoard from '../Dashboard/Dashboard'
 import axios from "axios";
 import ResultsNav from "../../components/ResultsNav/ResultsNav";
 
@@ -8,12 +7,13 @@ class ResultsPage extends Component {
   state = {
     animalList: null,
     userPreferences: {},
+    isLoading: true,
+    userInfo: {}
   };
-
 
   getUserPreferences = (userId) => {
     axios.get(`http://localhost:8080/users/userpreferences/${userId}`)
-        .then((response) => { console.log(response.data[0])
+        .then((response) => { 
             this.setState({
                 userPreferences: response.data[0]
             })
@@ -35,15 +35,14 @@ class ResultsPage extends Component {
               userInfo: res.data,
               isLoading: false
           })
-          getUserPreferences(userInfo)
+          const userInfo = res.data.userId
+          this.getUserPreferences(userInfo)
+          
       })
   } else {
       this.props.history.push('/login')
   }
-}
-
-  componentDidMount() {
-    axios
+  axios
       .get(`http://localhost:8080`)
       .then((response) => {
         this.setState({
@@ -51,8 +50,8 @@ class ResultsPage extends Component {
         })   
       })
       .catch((error) => console.log(error));
-  }
 
+}
   
   render() {
     const { isLoading, userInfo } = this.state
