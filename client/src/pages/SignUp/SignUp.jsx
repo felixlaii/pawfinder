@@ -18,7 +18,6 @@ function SignUp(props) {
             lastName: e.target.lastName.value,
             username: e.target.username.value,
             password: e.target.password.value,
-            searchRadius: e.target.searchRadius.value,
             animalType: e.target.animalType.value,
             breed: e.target.breed.value,
             age: e.target.age.value
@@ -43,8 +42,6 @@ function SignUp(props) {
 
                     <Input label="Username" name="username" type="text" />
                     <Input label="Password" name="password" type="password" />
-
-                    <Input label="Search Radius" name="searchRadius" type="text" />
 
                     <label className="input-field__label">Type of Animal</label>
                     <select className="input-field__input" name="animalType">

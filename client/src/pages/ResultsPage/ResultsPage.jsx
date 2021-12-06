@@ -18,7 +18,7 @@ class ResultsPage extends Component {
                 userPreferences: response.data[0]
             })
         })
-        .catch((error) => console.log(error))
+        .catch((error) => (error))
  }
 
  componentDidMount() {
@@ -49,7 +49,7 @@ class ResultsPage extends Component {
           animalList: response.data.animals,
         })   
       })
-      .catch((error) => console.log(error));
+      .catch((error) => (error));
 
 }
   

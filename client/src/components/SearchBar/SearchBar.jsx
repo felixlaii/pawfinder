@@ -21,7 +21,6 @@ export default class SearchBar extends Component {
             .get(`http://localhost:8080/search${searchQuery}`)
             .then((response) => {
                 this.props.filterByQuery(this.state.query)
-                console.log(response)
                 this.setState({
                     errorLoading: false,
                     searchQuery: searchQuery,

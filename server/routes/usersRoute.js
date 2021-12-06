@@ -67,12 +67,10 @@ res.status(400).send(`error retrieving users`))
   })
 
   router.get('/allusers', (req, res) => {
-    console.log(req.user)
     knex('users').then((response) => res.send(response))
 })
 
   router.get('/userpreferences/:userId', (req, res) => {
-      console.log(req.user)
       knex('users').where('userId', req.params.userId).then((response) => res.send(response))
   })
 

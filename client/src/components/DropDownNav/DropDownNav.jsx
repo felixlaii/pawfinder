@@ -8,9 +8,7 @@ function DropDownNav({ animalList }) {
       <nav>
         <div className="dropdown-nav__list">
         <label className="input-field__label">select breed</label>
-
           <select className="input-field__input">
-           
             {animalList.map((animal) => (
               <DropDownItem
                 key={animal.id}
@@ -18,7 +16,6 @@ function DropDownNav({ animalList }) {
                 breed={animal.breeds.primary}
               />
             ))}
- 
           </select>
         </div>
       </nav>

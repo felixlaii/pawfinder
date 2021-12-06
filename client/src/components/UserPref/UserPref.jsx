@@ -12,12 +12,11 @@ export default class UserPref extends Component {
     axios
       .get(`http://localhost:8080/users/userpreferences/${userId}`)
       .then((response) => {
-        console.log(response);
         this.setState({
           userPreferences: response.data,
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => (error));
   };
 
 

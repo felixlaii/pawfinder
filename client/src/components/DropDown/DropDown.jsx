@@ -17,7 +17,7 @@ class DropDown extends Component {
                 })
             })
            
-            .catch((error) => console.log(error))
+            .catch((error) => (error))
     }
     render() {
         if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>

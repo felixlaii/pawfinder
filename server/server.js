@@ -40,9 +40,8 @@ app.use("/", (req, res, next) => {
                 created_at: Date.now().toString(),
               })
               .then((result) => {
-                console.log(result);
               })
-              .catch((error) => console.log(error));
+              .catch((error) => (error));
           });
       }
     });

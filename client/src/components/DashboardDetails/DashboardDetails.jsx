@@ -17,7 +17,7 @@ export default class DashboardDetails extends Component {
                     userPreferences: response.data[0]
                 })
             })
-            .catch((error) => console.log(error))
+            .catch((error) => (error))
      }
 
     componentDidMount() { 

@@ -18,7 +18,6 @@ router.get("/", (req, res) => {
         .then((response) => {
           res.status(200).json(response.data);
         })
-        // .catch((error) => (console.log(data)))
         .catch((error) => res.status(400).send({ message: error }));
     });
 });
