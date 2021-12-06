@@ -26,6 +26,7 @@ function SignUp(props) {
             props.history.push('/login')
         })
     }
+
     return (
         <div className="signup-popup">
             <div className="signup-popup__wrapper">
@@ -53,15 +54,17 @@ function SignUp(props) {
 
                     <label className="input-field__label">select breed</label>
                     <select className="input-field__input" name="breed">
-                        <option value="dogs">dogs</option>
+                        <option value="Pit">dogs</option>
                         <option value="cats">cats</option>
                     </select>
 
 
                     <label className="input-field__label">select age</label>
                     <select className="input-field__input" name="age">
-                        <option value="dogs">dogs</option>
-                        <option value="cats">cats</option>
+                        <option value="Baby">dogs</option>
+                        <option value="Young">cats</option>
+                        <option value="Adult">cats</option>
+
                     </select>
 
                     <button className="signup-popup__button" type="submit">sign up</button>

@@ -10,6 +10,7 @@ import GalleryListItem from './components/GalleryListItem/GalleryListItem'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import DashboardDetails from './components/DashboardDetails/DashboardDetails.jsx'
+import DropDown from './components/DropDown/DropDown'
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
                     <Route path="/users" component={UserPref} />
                     <Route path="/dashboard" component={DashBoard} />
                     <Route path="/dashboard/:details" component={DashboardDetails} />
+
+                    <Route path="/dropdown" component={DropDown} />
+
 
 
 

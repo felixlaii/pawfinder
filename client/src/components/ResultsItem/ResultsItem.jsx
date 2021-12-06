@@ -10,7 +10,6 @@ function ResultsItem({ name, age, photos}) {
     photos = photos[0].small
   }
 
-  console.log(photos)
   return (
     <div className="results-item">
       <div className="results-item__wrapper">
