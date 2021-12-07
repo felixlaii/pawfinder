@@ -76,7 +76,6 @@ class ResultsPage extends Component {
                 key={animal.id}
                 id={animal.id}
                 breed={animal.breeds}
-                // species={animal.species}
                 name={animal.name}
                 age={animal.age}
                 photos={animal.photos}

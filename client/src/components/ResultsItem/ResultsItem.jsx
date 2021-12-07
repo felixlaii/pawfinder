@@ -1,6 +1,7 @@
 import React from "react";
 import DogPlaceHolder from "../../assets/images/placeholder-results.jpg";
 import "./resultsItem.scss";
+import { Link } from 'react-router-dom'
 
 function ResultsItem({ name, age, photos}) {
 
@@ -19,7 +20,9 @@ function ResultsItem({ name, age, photos}) {
               <li className="results-item__item">{name}</li>
               <li className="results-item__item">{age}</li>
             </div>
+            <Link to="/adoption">
             <img className="results-item__image" src={photos} alt="dog placeholder" />
+            </Link>
           </ul>
         </div>
       </div>
