@@ -5,7 +5,7 @@ function DropDownItem({ breed, species }) {
   return (
       <>
         {/* <option value="species">{species}</option> */}
-        <option value="breeds">{breed}</option>
+        <option name="breed" >{breed}</option>
     </>
   );
 }

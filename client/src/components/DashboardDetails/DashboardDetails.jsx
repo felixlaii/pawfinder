@@ -44,7 +44,6 @@ export default class DashboardDetails extends Component {
                         <p className="dashboard-details__info">animal type: {this.state.userPreferences.animalType}</p>
                         <p className="dashboard-details__info">animal breed: {this.state.userPreferences.breedType}</p>
                         <p className="dashboard-details__info">animal age: {this.state.userPreferences.age}</p>
-                        <p className="dashboard-details__info">search radius: {this.state.userPreferences.searchRadius}</p>
                         <div className="dashboard-details__button">
 
                             <Link to="/results">

@@ -20,16 +20,15 @@ function SignUp(props) {
             password: e.target.password.value,
             animalType: e.target.animalType.value,
             breed: e.target.breed.value,
-            age: e.target.age.value
+            age: e.target.age.value,
+         
         })
         .then(res => {
             props.history.push('/login')
         })
     }
 
-    const animalSelect = () => {
-        
-    }
+    
 
     return (
         <div className="signup-popup">
@@ -48,20 +47,30 @@ function SignUp(props) {
                     <Input label="Password" name="password" type="password" />
 
                     <label className="input-field__label">Type of Animal</label>
-                    <select onChange={animalSelect} className="input-field__input" name="animalType">
+                    <select className="input-field__input" name="animalType">
                         <option value="dogs">Dogs</option>
                         <option value="cats">Cats</option>
                     </select>
+{/* 
+                    <label className="input-field__label">select breed</label>
+                        <select className="input-field__input" name="breed">
+                            <option value="breed" name="breed">Golden Retriever</option>
+                            <option value="breed" name="breed">Chihuahua</option>
+                            <option value="breed" name="breed">German Shepherd</option>
+                            <option value="breed" name="breed">RottWeiler</option>
+                            <option value="breed" name="breed">Beagle</option>
 
-                    <DropDown 
+                        </select> */}
+
+                     <DropDown name="breed"
                     // selectedAnimal={}
                     />
 
                     <label className="input-field__label">select age</label>
                     <select className="input-field__input" name="age">
-                        <option value="age">Baby</option>
-                        <option value="age">Young</option>
-                        <option value="age">Adult</option>
+                        <option name="age" >Baby</option>
+                        <option name="age" >Young</option>
+                        <option name="age">Adult</option>
                     </select>
 
                     <button className="signup-popup__button" type="submit">sign up</button>

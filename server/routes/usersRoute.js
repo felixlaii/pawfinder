@@ -27,7 +27,10 @@ res.status(400).send(`error retrieving users`))
         username: foundUser.username,
         firstName: foundUser.firstName,
         lastName: foundUser.lastName,
-        userId: foundUser.userId
+        userId: foundUser.userId,
+        animalType: foundUser.animalType,
+        breed: foundUser.breedType,
+        age: foundUser.age
       })
   })
 
@@ -79,12 +82,11 @@ res.status(400).send(`error retrieving users`))
     const lastName = req.body.lastName;
     const username = req.body.username;
     const password = req.body.password;
-    const searchRadius = req.body.searchRadius;
     const animalType = req.body.animalType;
     const breed = req.body.breed;
     const age = req.body.age;
 
-    if(!firstName || !lastName || !username || !password || !searchRadius || !animalType || !breed || !age) {
+    if(!firstName || !lastName || !username || !password || !animalType || !breed || !age) {
         return res.status(400).json({
             message: "registration requires all fields"
         })
@@ -95,7 +97,6 @@ res.status(400).send(`error retrieving users`))
         lastName: lastName,
         username: username,
         password: password,
-        searchRadius: searchRadius,
         animalType: animalType,
         breed: breed,
         age: age
@@ -106,7 +107,6 @@ res.status(400).send(`error retrieving users`))
         lastName: newUser.lastName, 
         username: newUser.username,
         password: newUser.password,
-        searchRadius: newUser.searchRadius,
         animalType: newUser.animalType,
         breedType: newUser.breed,
         age: newUser.age 

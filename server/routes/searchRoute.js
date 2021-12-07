@@ -18,7 +18,7 @@ router.get("/searchspecies/:species", (req, res) => {
                 res.status(200).json(filteredAnimals);
             });
     })
-        // .catch((error) => res.status(400).send([]));
+        .catch((error) => res.status(400).send([]));
 });
 
 router.get("/searchbreed/:breed", (req, res) => {

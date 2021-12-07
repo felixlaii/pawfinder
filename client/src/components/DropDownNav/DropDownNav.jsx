@@ -20,7 +20,7 @@ function DropDownNav({ animalList }) {
 
           
         <label className="input-field__label">select breed</label>
-          <select className="input-field__input">
+          <select className="input-field__input" name="breed">
             {animalList.map((animal) => (
               <DropDownItem
                 key={animal.id}

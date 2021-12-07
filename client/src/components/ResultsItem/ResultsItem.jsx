@@ -1,5 +1,5 @@
 import React from "react";
-import DogPlaceHolder from "../../assets/images/hero.jpg";
+import DogPlaceHolder from "../../assets/images/placeholder-results.jpg";
 import "./resultsItem.scss";
 
 function ResultsItem({ name, age, photos}) {

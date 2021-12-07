@@ -2,24 +2,25 @@ import React from "react";
 import { Component } from "react";
 import axios from "axios";
 import ResultsNav from "../../components/ResultsNav/ResultsNav";
+import ResultsItem from '../../components/ResultsItem/ResultsItem'
 
 class ResultsPage extends Component {
   state = {
-    animalList: null,
+    animalList: "",
     userPreferences: {},
     isLoading: true,
     userInfo: {}
   };
 
-  getUserPreferences = (userId) => {
-    axios.get(`http://localhost:8080/users/userpreferences/${userId}`)
-        .then((response) => { 
-            this.setState({
-                userPreferences: response.data[0]
-            })
-        })
-        .catch((error) => (error))
- }
+//   getUserPreferences = (userId) => {
+//     axios.get(`http://localhost:8080/users/userpreferences/${userId}`)
+//         .then((response) => {
+//             this.setState({
+//                 userPreferences: response.data[0]
+//             })
+//         })
+//         .catch((error) => (error))
+//  }
 
  componentDidMount() {
   let token = sessionStorage.getItem('authToken')
@@ -35,10 +36,10 @@ class ResultsPage extends Component {
               userInfo: res.data,
               isLoading: false
           })
-          const userInfo = res.data.userId
-          this.getUserPreferences(userInfo)
-          
-      })
+          const userInfo = res.data
+          // this.getUserPreferences(userInfo)
+          console.log(userInfo)
+        })
   } else {
       this.props.history.push('/login')
   }
@@ -48,6 +49,9 @@ class ResultsPage extends Component {
         this.setState({
           animalList: response.data.animals,
         })   
+        const filteredAnimals = this.state.animalList.filter(animal => animal.age == this.state.userInfo.age)
+        const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary == this.state.userInfo.breed)
+        console.log(filteredBreed)
       })
       .catch((error) => (error));
 
@@ -55,7 +59,10 @@ class ResultsPage extends Component {
   
   render() {
     const { isLoading, userInfo } = this.state
-
+    // const combinedPreferences = {
+    //   this.state.userInfo.
+    // }
+  
     if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
 
     return isLoading ?
@@ -63,9 +70,21 @@ class ResultsPage extends Component {
     :
         (
       <div className="results-page">
-        <ResultsNav
-        animalList={this.state.animalList}
-        />
+        <ul className="results-item__list">
+          <li className="results-item__item">
+            {filteredBreed.map((animal) => (
+              <ResultsItem
+                key={animal.id}
+                id={animal.id}
+                breed={animal.breeds.primary}
+                species={animal.species}
+                name={animal.name}
+                age={animal.age}
+                photos={animal.photos}
+              />
+            ))}
+          </li>
+        </ul>
       </div>
     );
   }

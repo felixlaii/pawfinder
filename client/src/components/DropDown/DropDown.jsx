@@ -12,21 +12,29 @@ class DropDown extends Component {
     }
 
     componentDidMount() {
-        // axios.get(`http://localhost:8080`)
-        //     .then((response) => {
-        //         this.setState({ 
-        //             animalList: response.data.animals,
-        //         })
-        //     })
-        //     .catch((error) => (error))
-
-        axios.get(`http://localhost:8080/petpreference/:species`)
-            .then((response) => { console.log(response)
-                this.setState({
-                    cats: response.data,
-                    dogs: response.data
+        axios.get(`http://localhost:8080`)
+            .then((response) => {
+                this.setState({ 
+                    animalList: response.data.animals,
+        
                 })
             })
+            .catch((error) => (error))
+
+        // axios.get(`http://localhost:8080/searchspecies/:species`)
+        //     .then((response) => { console.log(response)
+        //         this.setState({
+        //             cats: response.data.animals.type,
+        //             dogs: response.data.animals.type,
+        //         })
+        //     })
+
+        //     axios.get(`http://localhost:8080/searchbreed/:breed`)
+        //     .then((response) => { console.log(response)
+        //         this.setState({
+        //             breed: response.data.animals.breeds.primary
+        //         })
+        //     })
     }
 
     render() { 
