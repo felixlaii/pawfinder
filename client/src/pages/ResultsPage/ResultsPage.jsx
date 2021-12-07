@@ -49,21 +49,20 @@ class ResultsPage extends Component {
         this.setState({
           animalList: response.data.animals,
         })   
-        const filteredAnimals = this.state.animalList.filter(animal => animal.age == this.state.userInfo.age)
-        const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary == this.state.userInfo.breed)
-        console.log(filteredBreed)
+        // const filteredAnimals = this.state.animalList.filter(animal => animal.age == this.state.userInfo.age)
+        // const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary == this.state.userInfo.breed)
+        // console.log(filteredBreed)
       })
       .catch((error) => (error));
-
 }
   
   render() {
     const { isLoading, userInfo } = this.state
-    // const combinedPreferences = {
-    //   this.state.userInfo.
-    // }
-  
     if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
+
+    const filteredAnimals = this.state.animalList.filter(animal => animal.age == this.state.userInfo.age)
+    const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary == this.state.userInfo.breed)
+    console.log(filteredBreed)
 
     return isLoading ?
     <h1>Loading...</h1>
@@ -76,8 +75,8 @@ class ResultsPage extends Component {
               <ResultsItem
                 key={animal.id}
                 id={animal.id}
-                breed={animal.breeds.primary}
-                species={animal.species}
+                breed={animal.breeds}
+                // species={animal.species}
                 name={animal.name}
                 age={animal.age}
                 photos={animal.photos}
