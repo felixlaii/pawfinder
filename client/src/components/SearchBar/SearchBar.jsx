@@ -11,19 +11,21 @@ export default class SearchBar extends Component {
     }
 
     handleQueryChange = (e) => {
-        this.setState({
-            searchQuery: e.target.value,
-        })
+        e.preventDefault()
+        // this.setState({
+        //     searchQuery: e.target.search.value,
+        // })
+        this.getAnimals(e.target.search.value)
     }
 
     getAnimals = (searchQuery) => {
         axios
-            .get(`http://localhost:8080/search${searchQuery}`)
+            .get(`http://localhost:8080/searchspecies/${searchQuery}`)
             .then((response) => {
                 this.props.filterByQuery(this.state.query)
                 this.setState({
                     errorLoading: false,
-                    searchQuery: searchQuery,
+                    // searchQuery: searchQuery,
                     animalList: response.data.animals
                 })
             })
@@ -37,8 +39,8 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div className="adoption-search">
-                <form onChange={this.handleQueryChange}>
-                    <input type="text" placeholder="find your pawfect friend..." className="adoption-search__input" value={this.state.searchQuery} onChange={this.getAnimals}/>
+                <form onKeyPress={(e) => e.key === 'Enter' && this.handleQueryChange()}>
+                    <input id="search" type="text" placeholder="find your pawfect friend..." className="adoption-search__input"/>
                 </form>
         
             </div>

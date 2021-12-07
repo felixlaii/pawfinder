@@ -1,0 +1,31 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+.paw-dashboard__loggedin {
+  font-size: 1.3rem;
+  color: #B56C2A;
+  margin-left: 5rem;
+}
+.paw-dashboard__header {
+  display: flex;
+  margin-top: 3rem;
+}
+.paw-dashboard__icon {
+  width: 2rem;
+}
+.paw-dashboard__button {
+  font-family: "lemonmilk";
+  margin-left: 48rem;
+  font-size: 1rem;
+  padding: 0.3rem 5rem 0.3rem 1.3rem;
+  border: none;
+  background-color: #FFFFFF;
+  color: #B56C2A;
+  text-decoration: underline;
+}/*# sourceMappingURL=dashboard.css.map */

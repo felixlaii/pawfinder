@@ -1,0 +1,40 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+.results-item__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.results-item__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.results-item__card {
+  border: 1px solid #000000;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border-radius: 6px;
+  width: 27vw;
+}
+.results-item__item {
+  flex-grow: 1;
+  position: relative;
+}
+.results-item__image {
+  position: relative;
+  width: 20vw;
+  height: 20vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+  padding-bottom: 1rem;
+  vertical-align: bottom;
+}/*# sourceMappingURL=resultsItem.css.map */

@@ -1,0 +1,46 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+@font-face {
+  font-family: "lemonmilk";
+  src: url(../../assets/fonts/lemonmilk-regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "lemonmilk-bold";
+  src: url(../../assets/fonts/lemonmilk-bold.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "lemonmilk-bold";
+  src: url(../../assets/fonts/lemonmilk-light.otf);
+  font-weight: 300;
+}
+body {
+  font-family: "lemonmilk";
+  width: 100%;
+  overflow: hidden;
+}
+
+.input-field__label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #B56C2A;
+  font-size: 0.7rem;
+  padding-left: 0.5rem;
+  margin-top: 0.6rem;
+}
+.input-field__input {
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  width: 18rem;
+}/*# sourceMappingURL=input.css.map */

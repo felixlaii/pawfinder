@@ -12,16 +12,6 @@ class ResultsPage extends Component {
     userInfo: {}
   };
 
-//   getUserPreferences = (userId) => {
-//     axios.get(`http://localhost:8080/users/userpreferences/${userId}`)
-//         .then((response) => {
-//             this.setState({
-//                 userPreferences: response.data[0]
-//             })
-//         })
-//         .catch((error) => (error))
-//  }
-
  componentDidMount() {
   let token = sessionStorage.getItem('authToken')
 
@@ -37,7 +27,6 @@ class ResultsPage extends Component {
               isLoading: false
           })
           const userInfo = res.data
-          // this.getUserPreferences(userInfo)
           console.log(userInfo)
         })
   } else {
@@ -52,13 +41,21 @@ class ResultsPage extends Component {
       })
       .catch((error) => (error));
 }
+
+handleLogOut = (e) => {
+  e.preventDefault()
+
+  sessionStorage.removeItem('authToken')
+
+  this.props.history.push('/login')
+}
   
   render() {
     const { isLoading, userInfo } = this.state
     if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
 
-    const filteredAnimals = this.state.animalList.filter(animal => animal.age == this.state.userInfo.age)
-    const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary == this.state.userInfo.breed)
+    const filteredAnimals = this.state.animalList.filter(animal => animal.age === this.state.userInfo.age)
+    const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary === this.state.userInfo.breed)
     console.log(filteredBreed)
 
     return isLoading ?
@@ -66,6 +63,9 @@ class ResultsPage extends Component {
     :
         (
       <div className="results-page">
+               <button className="paw-dashboard__button" onClick={this.handleLogOut}>Log Out</button> 
+                         
+
         <ul className="results-item__list">
           <li className="results-item__item">
             {filteredBreed.map((animal) => (

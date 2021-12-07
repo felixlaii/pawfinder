@@ -1,0 +1,57 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+.signup-popup {
+  height: 75vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.signup-popup__header {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #B56C2A;
+}
+.signup-popup__titlewrapper {
+  display: flex;
+  flex-direction: row;
+}
+.signup-popup__icon {
+  width: 2rem;
+}
+.signup-popup__form {
+  border: 2px solid #E5DBCF;
+  padding: 1rem;
+  padding-left: 6.5rem;
+  padding-right: 6.5rem;
+}
+.signup-popup__wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 35vw;
+}
+.signup-popup__label {
+  font-size: 5rem;
+}
+.signup-popup__button {
+  font-family: "lemonmilk";
+  font-size: 0.8rem;
+  padding: 0.3rem 5rem 0.3rem 1.3rem;
+  border: none;
+  background-color: #FFFFFF;
+  color: #B56C2A;
+  text-decoration: underline;
+}
+.signup-popup__hero {
+  width: 59vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.signup-popup__option {
+  padding-left: 0.5rem;
+}/*# sourceMappingURL=signUp.css.map */

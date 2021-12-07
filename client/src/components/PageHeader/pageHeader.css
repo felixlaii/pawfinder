@@ -1,0 +1,51 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+.page-header {
+  background-color: #FFFFFF;
+  width: 80%;
+  height: 10vw;
+  margin-right: 0;
+}
+.page-header__list {
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.page-header__logo {
+  width: 3rem;
+}
+.page-header__icon {
+  width: 1rem;
+  height: 1rem;
+}
+.page-header__item {
+  list-style: none;
+  text-decoration: none;
+  color: #B56C2A;
+}
+.page-header__item--divider {
+  list-style: none;
+  text-decoration: none;
+  color: #B56C2A;
+  font-size: 1rem;
+}
+.page-header__item:link {
+  text-decoration: none;
+}
+.page-header__item:active {
+  color: #B56C2A;
+  text-decoration: none;
+}
+.page-header__item:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=pageHeader.css.map */

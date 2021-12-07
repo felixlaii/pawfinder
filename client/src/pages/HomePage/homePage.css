@@ -1,0 +1,45 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+.home-page {
+  height: 75vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.home-page__hero {
+  width: 50vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home-page__container {
+  display: flex;
+}
+.home-page__header {
+  color: #B56C2A;
+}
+.home-page__footer {
+  border: 2px solid #424C55;
+  width: 48%;
+}
+.home-page__socials {
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+.home-page__about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 33rem;
+}
+.home-page__saying {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+}/*# sourceMappingURL=homePage.css.map */

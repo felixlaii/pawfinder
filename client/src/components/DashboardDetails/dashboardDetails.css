@@ -1,0 +1,44 @@
+:root {
+  --ion-color-secondary: #424C55;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #005a00;
+  --ion-color-secondary-tint: #1a751a;
+}
+
+.dashboard-details {
+  height: 75vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.dashboard-details__container {
+  border: 2px solid #E5DBCF;
+  display: flex;
+  flex-direction: column;
+  padding-left: 6.5rem;
+  padding-right: 6.5rem;
+  width: 22vw;
+}
+.dashboard-details__wrapper {
+  display: flex;
+}
+.dashboard-details__header {
+  font-size: 1rem;
+  color: #B56C2A;
+}
+.dashboard-details__image {
+  width: 59vw;
+}
+.dashboard-details__info {
+  font-size: 0.8rem;
+}
+.dashboard-details__preferences {
+  font-family: "lemonmilk";
+  font-size: 0.8rem;
+  padding: 0.3rem 5rem 0.3rem 1.3rem;
+  border: none;
+  background-color: #FFFFFF;
+  color: #B56C2A;
+  text-decoration: underline;
+}/*# sourceMappingURL=dashboardDetails.css.map */
