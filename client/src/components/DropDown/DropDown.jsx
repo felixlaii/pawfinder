@@ -12,14 +12,23 @@ class DropDown extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080`)
-            .then((response) => { console.log(response.data.animals[0].species)
-                this.setState({ 
-                    animalList: response.data.animals,
+        // axios.get(`http://localhost:8080`)
+        //     .then((response) => {
+        //         this.setState({ 
+        //             animalList: response.data.animals,
+        //         })
+        //     })
+        //     .catch((error) => (error))
+
+        axios.get(`http://localhost:8080/petpreference/:species`)
+            .then((response) => { console.log(response)
+                this.setState({
+                    cats: response.data,
+                    dogs: response.data
                 })
             })
-            .catch((error) => (error))
     }
+
     render() { 
         if (!this.state.animalList) return <div><p className="loading">Loading...</p></div>
 
