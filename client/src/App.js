@@ -10,7 +10,6 @@ import GalleryListItem from './components/GalleryListItem/GalleryListItem'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import DashboardDetails from './components/DashboardDetails/DashboardDetails.jsx'
-// import DropDown from './components/DropDown/DropDown'
 import AdoptionPage from './pages/AdoptionPage/AdoptionPage'
 
 
@@ -26,6 +25,8 @@ function App() {
 
 
                     <Route path="/results" component={ResultsPage} />
+                    <Route path="/adoption" component={AdoptionPage} />
+
                     <Route path="/search" component={SearchBar} />
                     <Route path="/search/:searchQuery" component={Gallery} />
                     <Route path="/gallery" component={GalleryListItem} />
@@ -36,7 +37,7 @@ function App() {
                     <Route path="/dashboard" component={DashBoard} />
                     <Route path="/dashboard/:details" component={DashboardDetails} />
 
-                    <Route path="/adoption" component={AdoptionPage} />
+                   
 
 
 

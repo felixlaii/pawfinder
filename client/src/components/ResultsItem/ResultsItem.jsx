@@ -21,7 +21,7 @@ function ResultsItem({ name, age, photos}) {
               <li className="results-item__item">{age}</li>
             </div>
             <Link to="/adoption">
-            <img className="results-item__image" src={photos} alt="dog placeholder" />
+              <img className="results-item__image" src={photos} alt="dog placeholder" />
             </Link>
           </ul>
         </div>

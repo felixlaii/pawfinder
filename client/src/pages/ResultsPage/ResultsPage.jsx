@@ -7,7 +7,7 @@ import ResultsItem from '../../components/ResultsItem/ResultsItem'
 class ResultsPage extends Component {
   state = {
     animalList: "",
-    userPreferences: {},
+    // userPreferences: {},
     isLoading: true,
     userInfo: {}
   };
@@ -49,9 +49,6 @@ class ResultsPage extends Component {
         this.setState({
           animalList: response.data.animals,
         })   
-        // const filteredAnimals = this.state.animalList.filter(animal => animal.age == this.state.userInfo.age)
-        // const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary == this.state.userInfo.breed)
-        // console.log(filteredBreed)
       })
       .catch((error) => (error));
 }
