@@ -39,7 +39,7 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div className="adoption-search">
-                <form onKeyPress={(e) => e.key === 'Enter' && this.handleQueryChange()}>
+                <form onKeyPress={(e) => e.key === 'Enter' && this.handleQueryChange(e)}>
                     <input id="search" type="text" placeholder="find your pawfect friend..." className="adoption-search__input"/>
                 </form>
         

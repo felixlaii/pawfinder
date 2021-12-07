@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   .then((data) => {
     data = data[0];
       axios
-        .get("https://api.petfinder.com/v2/animals", {
+        .get("https://api.petfinder.com/v2/animals?limit=50", {
           headers: {
             Authorization: `Bearer ${data.auth_token}`,
           },

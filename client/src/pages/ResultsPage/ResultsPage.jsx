@@ -7,7 +7,6 @@ import ResultsItem from '../../components/ResultsItem/ResultsItem'
 class ResultsPage extends Component {
   state = {
     animalList: "",
-    // userPreferences: {},
     isLoading: true,
     userInfo: {}
   };
@@ -56,7 +55,6 @@ handleLogOut = (e) => {
 
     const filteredAnimals = this.state.animalList.filter(animal => animal.age === this.state.userInfo.age)
     const filteredBreed = filteredAnimals.filter(animal => animal.breeds.primary === this.state.userInfo.breed)
-    console.log(filteredBreed)
 
     return isLoading ?
     <h1>Loading...</h1>

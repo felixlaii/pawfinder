@@ -13,3 +13,38 @@ You have the ability to refine your search by submitting your preferences and it
 Front-End Built with
 Create-React-App
 SASS - Syntactically Awesome Style Sheets
+
+Installation
+Follow these steps to run a local instance of PawFinder:
+(you'll require node, npm and MySQL already installed)
+
+1. Clone this repo
+
+Back-end setup:
+2. Create a new database in MySQL called token and users
+
+3. Install server dependencies
+    a. Run npm install from inside the server directory. 
+    $ cd server
+    $ npm install axios jsonwebtoken express cors
+
+4. Run Migrations
+$ npm run migrate
+
+5. Run seeds
+$ npm run seed
+
+6. Set up environment variables:
+PORT=<PORT_NUMBER>
+
+7. Start the server:
+$ npx nodemon server.js
+
+Set up Front-End:
+8. Install client dependencies
+    a. run npm install from inside the client directory.
+    $ cd ../client
+    $ npm install sass react-router-dom@5.3 axios jsonwebtoken
+
+9. Start React-App
+$ npm start
