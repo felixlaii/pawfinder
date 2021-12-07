@@ -6,8 +6,15 @@ export default class AdoptionPage extends Component {
     state={
         animalList: null,
         selectedAnimal: null,
+        display: "none"
     }
 
+    onCloseHandler= () => {
+        this.setState({
+            display: "none"
+        })
+    }
+    
 
   selectedAnimal = (animalId) => {
     axios.get(`http://localhost:8080/${animalId}`)
