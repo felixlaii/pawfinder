@@ -38,10 +38,10 @@ router.get("/:id", (req, res) => {
           },
         })
         .then((response) => {
-          console.log(response.data)
+          console.log(response.data);
           res.status(200).json(response.data.animal);
         })
-      .catch((error) => res.status(400).send({ message: error }));
+        .catch((error) => res.status(400).send({ message: error }));
     });
 });
 

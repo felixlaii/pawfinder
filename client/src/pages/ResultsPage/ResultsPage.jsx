@@ -10,7 +10,6 @@ class ResultsPage extends Component {
     userInfo: {},
   };
 
-
   componentDidMount() {
     let token = sessionStorage.getItem("authToken");
 
@@ -68,22 +67,27 @@ class ResultsPage extends Component {
         <button className="paw-dashboard__button" onClick={this.handleLogOut}>
           Log Out
         </button>
-<div className="results-item__listwrapper">
-        <ul className="results-item__list">
-          <li className="results-item__item">
-            {filteredBreed.map((animal) => (
-              <ResultsItem
-                key={animal.id}
-                id={animal.id}
-                breed={animal.breeds}
-                name={animal.name}
-                age={animal.age}
-                photos={animal.photos}
-                selectedAnimal={this.selectedAnimal}
-              />
-            ))}
-          </li>
-        </ul>
+        <div className="paw-dashboard__header">
+          <h2 className="paw-dashboard__resultsheader">
+            {userInfo.firstName} {userInfo.lastName}s preferences
+          </h2>
+        </div>
+        <div className="results-item__listwrapper">
+          <ul className="results-item__list">
+            <li className="results-item__item">
+              {filteredBreed.map((animal) => (
+                <ResultsItem
+                  key={animal.id}
+                  id={animal.id}
+                  breed={animal.breeds}
+                  name={animal.name}
+                  age={animal.age}
+                  photos={animal.photos}
+                  selectedAnimal={this.selectedAnimal}
+                />
+              ))}
+            </li>
+          </ul>
         </div>
         <button className="paw-dashboard__button">more options</button>
       </div>

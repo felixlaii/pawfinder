@@ -16,7 +16,8 @@ router.get("/species/:species", (req, res) => {
             Authorization: `Bearer ${data.auth_token}`,
           },
         })
-        .then((response) => { console.log(response)
+        .then((response) => {
+          console.log(response);
           let filteredAnimals = response.data.animals.filter(
             (animal) => animal.type.toLowerCase() === req.params.species
           );

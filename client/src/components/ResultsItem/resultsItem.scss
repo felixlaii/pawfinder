@@ -2,45 +2,43 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-
 .results-item {
-    
+  &__info {
+    @include flex-row;
+  }
 
-    &__info {
-        @include flex-row;
-    }
+  &__card {
+    @include flex-row;
+    border: 2px solid $primarycolor;
+    @include route-margins;
+    border-radius: 6px;
+    width: 26vw;
+    overflow: auto;
+  }
 
-    &__card {
-        @include flex-row;
-        border: 2px solid $primarycolor;
-        @include route-margins;
-        border-radius: 6px;
-        width: 27vw;
-        overflow: auto;
-    }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+  }
 
-    &__item {
-        display: flex;
-        justify-content: space-between;
-    }
+  &__image {
+    position: relative;
+    width: 20vw;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 6px;
+    padding-bottom: 1rem;
+    vertical-align: bottom;
+  }
 
-    &__image {
-        position: relative;
-        width: 20vw;
-        height: 20vh;
-        object-fit: cover;
-        border-radius: 6px;
-        padding-bottom: 1rem;
-        vertical-align: bottom;
-    }
-
-    &__listwrapper {
-        @include flex-row;
-        list-style: none;
-        height: 40rem;
-        overflow: scroll;
-        margin-top: 5rem;
-        margin-left: 4rem;
-        margin-right: 4rem;
-    }
+  &__listwrapper {
+    @include flex-row;
+    list-style: none;
+    height: 40rem;
+    overflow: scroll;
+    margin-top: 5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
 }

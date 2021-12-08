@@ -72,7 +72,6 @@ function AdoptionItem({
           <button className="adoption-item__submit">go back</button>
         </Link>
         <button className="adoption-item__submit">adopt!</button>
-
       </div>
     </div>
   );
