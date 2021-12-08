@@ -4,17 +4,15 @@ import AdoptionItem from "../../components/AdoptionItem/AdoptionItem";
 
 export default class AdoptionPage extends Component {
   state = {
-    animalList: null,
     selectedAnimal: null,
   };
-
 
   selectedAnimal = (id) => {
     axios
       .get(`http://localhost:8080/${id}`)
       .then((response) => { 
         this.setState({
-          selectedAnimal: response.data.animals.id
+          selectedAnimal: response.data
         });
     
       })
@@ -22,21 +20,11 @@ export default class AdoptionPage extends Component {
   };
 
   componentDidMount() {
-    // axios
-    //   .get(`http://localhost:8080`)
-    //   .then((response) => {  
-    //     this.setState({ 
-    //       animalList: response.data.animals
-    //     });
         const animalId =
-          this.props.match.params.animalId; 
+          this.props.match.params.id; 
 
         this.selectedAnimal(animalId);
-   
       }
-      // )
-      // .catch((error) => error);
-  
 
   render() {
     if (!this.state.selectedAnimal) {
@@ -49,21 +37,19 @@ export default class AdoptionPage extends Component {
     return (
       <div className="adoption-page">
         <ul className="adoption-page__list">
-          {this.state.selectedAnimal.map((animal) => (
             <AdoptionItem
-              key={animal.id}
-              id={animal.id}
-              species={animal.species}
-              breed={animal.breeds.primary}
-              color={animal.colors.primary}
-              age={animal.age}
-              gender={animal.gender}
-              name={animal.name}
-              description={animal.description}
-              photos={animal.photos}
-              status={animal.status}
+              key={this.state.selectedAnimal.id}
+              id={this.state.selectedAnimal.id}
+              species={this.state.selectedAnimal.species}
+              breed={this.state.selectedAnimal.breeds.primary}
+              color={this.state.selectedAnimal.colors.primary}
+              age={this.state.selectedAnimal.age}
+              gender={this.state.selectedAnimal.gender}
+              name={this.state.selectedAnimal.name}
+              description={this.state.selectedAnimal.description}
+              photos={this.state.selectedAnimal.photos}
+              status={this.state.selectedAnimal.status}
             />
-          ))}
         </ul>
       </div>
       )

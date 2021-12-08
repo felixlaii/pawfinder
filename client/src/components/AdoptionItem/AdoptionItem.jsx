@@ -1,9 +1,10 @@
 import React from "react";
 import DogPlaceHolder from "../../assets/images/placeholder-results.jpg";
+import "./adoptionItem.scss";
+import { Link } from "react-router-dom";
 
 function AdoptionItem({
   breed,
-  color,
   age,
   gender,
   name,
@@ -20,37 +21,58 @@ function AdoptionItem({
   return (
     <div className="adoption-item">
       <div className="adoption-item__wrapper">
-        <div className="adoption-item__card">
-          <ul className="adoption-item__list">
-            <div className="adoption-item__card">
-              <div className="adoption-item__info">
-                <div className="adoption-item__imagewrapper">
-                  <img
-                    className="adoption-item__image"
-                    src={photos}
-                    alt="dog placeholder"
-                  />
+        <ul className="adoption-item__list">
+          <div className="adoption-item__card">
+            <div className="adoption-item__info">
+              <div className="adoption-item__imagewrapper">
+                <img
+                  className="adoption-item__image"
+                  src={photos}
+                  alt="dog placeholder"
+                />
+              </div>
+              <div className="adoption-item__cardwrapper">
+                <div className="adoption-item__details">
+                  <div className="adoption-item__detailwrapper">
+                    <p className="adoption-item__title">name:</p>
+                    <p className="adoption-item__item">{name}</p>
+                  </div>
+                  <div className="adoption-item__detailwrapper">
+                    <p className="adoption-item__title">age:</p>
+                    <p className="adoption-item__item">{age}</p>
+                  </div>
+
+                  <div className="adoption-item__detailwrapper">
+                    <p className="adoption-item__title">breed:</p>
+                    <p className="adoption-item__item">{breed}</p>
+                  </div>
+                  <div className="adoption-item__detailwrapper">
+                    <p className="adoption-item__title">gender:</p>
+                    <p className="adoption-item__item">{gender}</p>
+                  </div>
+                </div>
+                <div className="adoption-item__detaildescription">
+                  <p className="adoption-item__title">description:</p>
+
+                  <p className="adoption-item__item">{description}</p>
                 </div>
 
-                <div className="adoption-item__details">
-                  <p className="adoption-item__item">{name}</p>
-                  <p className="adoption-item__item">{age}</p>
-                  <p className="adoption-item__item">{breed}</p>
-                  <p className="adoption-item__item">{gender}</p>
-                  <p className="adoption-item__item">{color}</p>
-                </div>
-                <div className="adoption-item__description">
-                  <p className="adoption-item__item">{description}</p>
+                <div className="adoption-item__detailwrapper">
+                  <p className="adoption-item__title">status:</p>
+
                   <p className="adoption-item__item">{status}</p>
                 </div>
 
-                <button className="adoption-item__submit">go back</button>
-
-                <button className="adoption-item__submit">adopt!</button>
+                <div className="adoption-item__button"></div>
               </div>
             </div>
-          </ul>
-        </div>
+          </div>
+        </ul>
+        <Link to="/results">
+          <button className="adoption-item__submit">go back</button>
+        </Link>
+        <button className="adoption-item__submit">adopt!</button>
+
       </div>
     </div>
   );

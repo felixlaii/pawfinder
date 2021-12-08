@@ -2,7 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 const knex = require("knex")(require("../knexfile").development);
 
-router.get("/searchspecies/:species", (req, res) => {
+router.get("/species/:species", (req, res) => {
   knex
     .select("*")
     .from("token")
@@ -16,7 +16,7 @@ router.get("/searchspecies/:species", (req, res) => {
             Authorization: `Bearer ${data.auth_token}`,
           },
         })
-        .then((response) => {
+        .then((response) => { console.log(response)
           let filteredAnimals = response.data.animals.filter(
             (animal) => animal.type.toLowerCase() === req.params.species
           );

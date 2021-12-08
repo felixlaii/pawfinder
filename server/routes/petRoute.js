@@ -32,17 +32,14 @@ router.get("/:id", (req, res) => {
     .then((data) => {
       data = data[0];
       axios
-        .get("https://api.petfinder.com/v2/animals", {
+        .get(`https://api.petfinder.com/v2/animals/${req.params.id}`, {
           headers: {
             Authorization: `Bearer ${data.auth_token}`,
           },
         })
         .then((response) => {
-          let animals=response.data.animals
-          let animalId = animals.filter( 
-            (animal) => {animal.id.toString().trim() == req.params.id.toString().trim() }
-          );
-          res.status(200).json(animalId);
+          console.log(response.data)
+          res.status(200).json(response.data.animal);
         })
       .catch((error) => res.status(400).send({ message: error }));
     });

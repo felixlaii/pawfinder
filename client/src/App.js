@@ -16,6 +16,7 @@ import AdoptionItem from './components/AdoptionItem/AdoptionItem'
 function App() {
     return (
         <BrowserRouter>
+        {console.log(<BrowserRouter/>)}
         <PageHeader />
             <div className="App">
                 <Switch>
@@ -25,11 +26,11 @@ function App() {
 
 
                     <Route path="/results" component={ResultsPage} />
-                    <Route path="/adoption" component={AdoptionPage} />
-                    <Route path="/adoption/:id" component={AdoptionItem} />
+                    <Route path="/adoption/:id" component={AdoptionPage} />
+                    {/* <Route path="/adoption" component={AdoptionItem} /> */}
 
 
-                    <Route path="/search" component={SearchBar} />
+                    {/* <Route path="/search" component={SearchBar} /> */}
                     <Route path="/search/:searchQuery" component={Gallery} />
                     <Route path="/gallery" component={GalleryListItem} />
 
