@@ -1,14 +1,16 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+
 
 .dashboard-details {
     height: 75vh;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    @include route-margins;
 
     &__container {
         border: 2px solid #E5DBCF;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         padding-left: 6.5rem;
         padding-right: 6.5rem;
         width: 22vw;
@@ -36,7 +38,7 @@
         font-size: 0.8rem;
         padding: 0.3rem 5rem 0.3rem 1.3rem;
         border: none;
-        background-color: #FFFFFF;
+        background-color: $primarylight;
         color: $primarycolor;
         text-decoration: underline;
     

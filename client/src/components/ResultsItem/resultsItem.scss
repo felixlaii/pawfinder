@@ -1,5 +1,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
 
 .results-item {
     
@@ -11,13 +13,6 @@
 
     }
 
-    // &__wrapper {
-    //     // overflow: hidden;
-    //     // overflow-x: auto;
-    //     // overflow-y: auto;
-    //     // flex: grid;
-    // }
-
     &__info {
         display: flex;
         flex-direction: row;
@@ -25,12 +20,10 @@
     }
 
     &__card {
-        border: 1px solid #000000;
-        margin-top: 1rem;
-        margin-left: 1rem;
+        border: 1px solid $primarydark;
+        @include route-margins;
         border-radius: 6px;
         width: 27vw;
-        // overflow: auto;
     }
 
     &__item {

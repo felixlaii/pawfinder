@@ -1,123 +1,128 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const authorize = require("../middleware/authorize");
-const knex = require('knex')(require('../knexfile').development);
+const knex = require("knex")(require("../knexfile").development);
 
-
-let users = []
-knex('users')
-.then((data) => {
-   users = data;
-})
-.catch((err) => 
-res.status(400).send(`error retrieving users`))
-
-
-  router.get('/current', authorize, (req, res) => {
-      const usernameFromToken = req.decoded.username;
-
-      const foundUser = users.find(user => user.username === usernameFromToken)
-
-      if(!foundUser) {
-          return res.status(400).json({
-              message: "unable to find user"
-          })
-      }
-      return res.json({
-        username: foundUser.username,
-        firstName: foundUser.firstName,
-        lastName: foundUser.lastName,
-        userId: foundUser.userId,
-        animalType: foundUser.animalType,
-        breed: foundUser.breedType,
-        age: foundUser.age
-      })
+let users = [];
+knex("users")
+  .then((data) => {
+    users = data;
   })
+  .catch((err) => res.status(400).send(`error retrieving users`));
 
-  router.post('/login', (req, res) => {
-      const { username, password } = req.body
+router.get("/current", authorize, (req, res) => {
+  const usernameFromToken = req.decoded.username;
 
-      if(!username || !password) {
-          return res.status(400).json({
-              message: "login requires username and password!"
-          })
-      }
+  const foundUser = users.find((user) => user.username === usernameFromToken);
 
-      const foundUser = users.find(user => user.username === username)
+  if (!foundUser) {
+    return res.status(400).json({
+      message: "unable to find user",
+    });
+  }
+  return res.json({
+    username: foundUser.username,
+    firstName: foundUser.firstName,
+    lastName: foundUser.lastName,
+    userId: foundUser.userId,
+    animalType: foundUser.animalType,
+    breed: foundUser.breedType,
+    // age: foundUser.age,
+  });
+});
 
-      if(!foundUser) {
-          return res.status(400).json({
-              message: "user does not exist"
-          })
-      }
+router.post("/login", (req, res) => {
+  const { username, password } = req.body;
 
-    if(foundUser.password !== password) {
-        return res.status(400).json({
-            message: "invalid credentials, password does not match"
-        })
-    }
+  if (!username || !password) {
+    return res.status(400).json({
+      message: "login requires username and password!",
+    });
+  }
 
-    const token = jwt.sign(
-        { username: username },
-        process.env.JWT_SECRET_KEY,
-        { expiresIn: "1h"}
-    )
+  const foundUser = users.find((user) => user.username === username);
 
-    res.json({
-        message: "successfully loggin in",
-        token: token
-    })
-  })
+  if (!foundUser) {
+    return res.status(400).json({
+      message: "user does not exist",
+    });
+  }
 
-  router.get('/allusers', (req, res) => {
-    knex('users').then((response) => res.send(response))
-})
+  if (foundUser.password !== password) {
+    return res.status(400).json({
+      message: "invalid credentials, password does not match",
+    });
+  }
 
-  router.get('/userpreferences/:userId', (req, res) => {
-      knex('users').where('userId', req.params.userId).then((response) => res.send(response))
-  })
+  const token = jwt.sign({ username: username }, process.env.JWT_SECRET_KEY, {
+    expiresIn: "1h",
+  });
 
-  router.post('/register', (req, res) => {
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const username = req.body.username;
-    const password = req.body.password;
-    const animalType = req.body.animalType;
-    const breed = req.body.breed;
-    const age = req.body.age;
+  res.json({
+    message: "successfully loggin in",
+    token: token,
+  });
+});
 
-    if(!firstName || !lastName || !username || !password || !animalType || !breed || !age) {
-        return res.status(400).json({
-            message: "registration requires all fields"
-        })
-    }
+router.get("/allusers", (req, res) => {
+  knex("users").then((response) => res.send(response));
+});
 
-    const newUser = {
-        firstName: firstName,
-        lastName: lastName,
-        username: username,
-        password: password,
-        animalType: animalType,
-        breed: breed,
-        age: age
-    }
+router.get("/userpreferences/:userId", (req, res) => {
+  knex("users")
+    .where("userId", req.params.userId)
+    .then((response) => res.send(response));
+});
 
-    knex('users').insert({
-        firstName: newUser.firstName, 
-        lastName: newUser.lastName, 
-        username: newUser.username,
-        password: newUser.password,
-        animalType: newUser.animalType,
-        breedType: newUser.breed,
-        age: newUser.age 
+router.post("/register", (req, res) => {
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const username = req.body.username;
+  const password = req.body.password;
+  const animalType = req.body.animalType;
+  const breed = req.body.breed;
+  // const age = req.body.age;
+
+  if (
+    !firstName ||
+    !lastName ||
+    !username ||
+    !password ||
+    !animalType ||
+    !breed
+    // !age
+  ) {
+    return res.status(400).json({
+      message: "registration requires all fields",
+    });
+  }
+
+  const newUser = {
+    firstName: firstName,
+    lastName: lastName,
+    username: username,
+    password: password,
+    animalType: animalType,
+    breed: breed,
+    // age: age,
+  };
+
+  knex("users")
+    .insert({
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
+      username: newUser.username,
+      password: newUser.password,
+      animalType: newUser.animalType,
+      breedType: newUser.breed,
+      // age: newUser.age,
     })
     .then((_result) => {
-        knex('users')
-        .then((data) => {
-            users = data
-        })
-    })
-    res.sendStatus(200)
-  })
+      knex("users").then((data) => {
+        users = data;
+      });
+    });
+  res.sendStatus(200);
+});
 
-  module.exports = router;
+module.exports = router;

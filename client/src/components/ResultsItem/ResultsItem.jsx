@@ -1,14 +1,18 @@
 import React from "react";
 import DogPlaceHolder from "../../assets/images/placeholder-results.jpg";
 import "./resultsItem.scss";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import AdoptionItem from "../AdoptionItem/AdoptionItem";
 
-function ResultsItem({ name, age, photos}) {
-
-  if(photos.length === 0) {
-    photos = DogPlaceHolder
+function ResultsItem({ name, age, photos, id, selectedAnimal }) {
+  const handleSelectedAnimal = (id) => {
+    selectedAnimal(id)
+  }
+  
+  if (photos.length === 0) {
+    photos = DogPlaceHolder;
   } else {
-    photos = photos[0].small
+    photos = photos[0].small;
   }
 
   return (
@@ -20,9 +24,14 @@ function ResultsItem({ name, age, photos}) {
               <li className="results-item__item">{name}</li>
               <li className="results-item__item">{age}</li>
             </div>
-            <Link to="/adoption">
-              <img className="results-item__image" src={photos} alt="dog placeholder" />
+            <Link to={`/adoption/${id}`}>
+              <img
+                className="results-item__image"
+                src={photos}
+                alt="dog placeholder"
+              />
             </Link>
+             
           </ul>
         </div>
       </div>

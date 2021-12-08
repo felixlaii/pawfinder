@@ -39,9 +39,8 @@ app.use("/", (req, res, next) => {
                 auth_token: response.data.access_token,
                 created_at: Date.now().toString(),
               })
-              .then((result) => {
-              })
-              .catch((error) => (error));
+              .then((result) => {})
+              .catch((error) => error);
           });
       }
     });

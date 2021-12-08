@@ -1,1 +1,22 @@
 @use "../../styles/partials/colors" as *;
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin route-margins {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+

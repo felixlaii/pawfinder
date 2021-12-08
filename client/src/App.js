@@ -3,7 +3,6 @@ import PageHeader from './components/PageHeader/PageHeader'
 import HomePage from './pages/HomePage/HomePage'
 import ResultsPage from './pages/ResultsPage/ResultsPage'
 import DashBoard from './pages/Dashboard/Dashboard.jsx'
-import UserPref from './components/UserPref/UserPref.jsx'
 import SearchBar from './components/SearchBar/SearchBar'
 import Gallery from './components/GalleryList/GalleryList.jsx'
 import GalleryListItem from './components/GalleryListItem/GalleryListItem'
@@ -11,6 +10,7 @@ import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import DashboardDetails from './components/DashboardDetails/DashboardDetails.jsx'
 import AdoptionPage from './pages/AdoptionPage/AdoptionPage'
+import AdoptionItem from './components/AdoptionItem/AdoptionItem'
 
 
 function App() {
@@ -26,6 +26,8 @@ function App() {
 
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/adoption" component={AdoptionPage} />
+                    <Route path="/adoption/:id" component={AdoptionItem} />
+
 
                     <Route path="/search" component={SearchBar} />
                     <Route path="/search/:searchQuery" component={Gallery} />
@@ -33,19 +35,8 @@ function App() {
 
 
 
-                    <Route path="/users" component={UserPref} />
                     <Route path="/dashboard" component={DashBoard} />
                     <Route path="/dashboard/:details" component={DashboardDetails} />
-
-                   
-
-
-
-
-             
-
-
-
                 </Switch>
             </div>
         </BrowserRouter>

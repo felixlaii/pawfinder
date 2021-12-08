@@ -1,9 +1,11 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
 
 .home-page {
     height: 75vh;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    @include route-margins;
 
     &__hero {
         width: 50vw;
@@ -32,16 +34,14 @@
     }
 
     &__about {
-        display: flex;
-        flex-direction: row;
+        @include flex-row;
         justify-content: center;
         margin-top: 33rem;
         
     }
 
     &__saying {
-        display: flex;
-        justify-content: center;
+        @include flex-center;
         font-size: 4rem;
     }
 }
