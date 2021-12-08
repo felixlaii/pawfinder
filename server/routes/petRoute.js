@@ -3,7 +3,6 @@ const axios = require("axios");
 const knex = require("knex")(require("../knexfile").development);
 
 router.get("/", (req, res) => {
-  console.log("hello world");
   knex
     .select("*")
     .from("token")
@@ -18,7 +17,6 @@ router.get("/", (req, res) => {
           },
         })
         .then((response) => {
-          console.log(response.data);
           res.status(200).json(response.data);
         })
         .catch((error) => res.status(400).send({ message: error }));
@@ -34,14 +32,15 @@ router.get("/:id", (req, res) => {
     .then((data) => {
       data = data[0];
       axios
-        .get("https://api.petfinder.com/v2/animals?limit=100", {
+        .get("https://api.petfinder.com/v2/animals", {
           headers: {
             Authorization: `Bearer ${data.auth_token}`,
           },
         })
         .then((response) => {
-          let animalId = response.data.animals.filter(
-            (animal) => animal.id === req.params.id
+          let animals=response.data.animals
+          let animalId = animals.filter( 
+            (animal) => {animal.id.toString().trim() == req.params.id.toString().trim() }
           );
           res.status(200).json(animalId);
         })

@@ -15,11 +15,9 @@ class DropDown extends Component {
     axios
       .get(`http://localhost:8080`)
       .then((response) => {
-        console.log(response);
         this.setState({
           animalList: response.data.animals,
         });
-        console.log(response.data.animals)
       })
       .catch((error) => error);
   }

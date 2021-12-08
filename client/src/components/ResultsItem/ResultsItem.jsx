@@ -2,13 +2,8 @@ import React from "react";
 import DogPlaceHolder from "../../assets/images/placeholder-results.jpg";
 import "./resultsItem.scss";
 import { Link } from "react-router-dom";
-import AdoptionItem from "../AdoptionItem/AdoptionItem";
 
-function ResultsItem({ name, age, photos, id, selectedAnimal }) {
-  const handleSelectedAnimal = (id) => {
-    selectedAnimal(id)
-  }
-  
+function ResultsItem({ name, age, photos, id }) {
   if (photos.length === 0) {
     photos = DogPlaceHolder;
   } else {

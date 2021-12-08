@@ -30,7 +30,7 @@ export default class DashboardDetails extends Component {
       this.getUserPreferences(userId);
     });
   }
-  render() { console.log(this.state.userPreferences.breedType)
+  render() {
     if (!this.state.userList)
       return (
         <div>

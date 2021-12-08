@@ -48,11 +48,11 @@ app.use("/", (req, res, next) => {
 });
 app.use("/users", usersRoute);
 app.use("/", petRoute);
-app.use("/", searchRoute);
+app.use("/search", searchRoute);
 app.get("/users", (req, res) => {
   res.send("Welcome to my API");
 });
 
 app.listen(PORT, () => {
-  console.log(`killl it queen ${PORT}`);
+  (`Server is running on ${PORT}`);
 });

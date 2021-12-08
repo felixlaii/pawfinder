@@ -27,7 +27,6 @@ class ResultsPage extends Component {
             isLoading: false,
           });
           const userInfo = res.data;
-          console.log(userInfo);
         });
     } else {
       this.props.history.push("/login");
