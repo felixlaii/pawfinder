@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
     errorLoading: false,
   };
 
-  searchRef = React.createRef()
+  searchRef = React.createRef();
   handleQueryChange = (e) => {
     e.preventDefault();
   };
@@ -18,12 +18,10 @@ export default class SearchBar extends Component {
     axios
       .get(`http://localhost:8080/search/species/${searchQuery}`)
       .then((response) => {
-        console.log(response)
-        // this.props.filterByQuery(this.state.query);
+        console.log(response);
         this.setState({
           errorLoading: false,
-          // searchQuery: searchQuery,
-          animalList: response.data
+          animalList: response.data,
         });
       })
       .catch((error) => {

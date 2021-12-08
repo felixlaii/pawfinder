@@ -3,22 +3,21 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-
-
 .input-field {
-    &__label {
-        @include flex-column;
-        color: $primarycolor;
-        font-size: 1rem;
-        font-size: 0.7rem;
-        padding-left: 0.5rem;
-        margin-top: 0.6rem;
-   }
-   &__input {
-       font-size: 0.8rem;
-       border-radius: 1rem; 
-       padding-top: 0.2rem;
-       padding-bottom: 0.2rem;
-       width: 18rem;
-   }
+  &__label {
+    @include flex-column;
+    color: $primarycolor;
+    font-size: 1rem;
+    font-size: 0.7rem;
+    padding-left: 0.5rem;
+    margin-top: 0.6rem;
+  }
+  &__input {
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    width: 18rem;
+  }
 }
+

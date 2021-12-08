@@ -2,53 +2,52 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-
-
 .login-popup {
-    height: 75vh;
-    @include route-margins;
+  height: 75vh;
+  @include route-margins;
 
-    &__header {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: $primarycolor;
-    }
+  &__header {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $primarycolor;
+  }
 
-    &__titlewrapper {
-        @include flex-row;
-    }
+  &__titlewrapper {
+    @include flex-row;
+  }
 
-    &__icon {
-        width: 2rem;
-    }
+  &__icon {
+    width: 2rem;
+  }
 
-    &__form {
-        border: 2px solid $headercolor; padding: 1rem;
-        padding-left: 6.5rem;
-        padding-right: 6.5rem;
-    }
+  &__form {
+    border: 2px solid $headercolor;
+    padding: 1rem;
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+  }
 
-    &__wrapper {
-        @include flex-row;
-        width: 35vw;
-    }
+  &__wrapper {
+    @include flex-row;
+    width: 35vw;
+  }
 
-    &__label {
-        font-size: 5rem;
-    }
+  &__label {
+    font-size: 5rem;
+  }
 
-    &__button {
-        font-family: 'lemonmilk';
-        font-size: 0.8rem;
-        padding: 0.3rem 5rem 0.3rem 1.3rem;
-        border: none;
-        background-color: $primarylight;
-        color: $primarycolor;
-        text-decoration: underline;
-    }
+  &__button {
+    font-family: "lemonmilk";
+    font-size: 0.8rem;
+    padding: 0.3rem 5rem 0.3rem 1.3rem;
+    border: none;
+    background-color: $primarylight;
+    color: $primarycolor;
+    text-decoration: underline;
+  }
 
-    &__hero {
-        width: 59vw;
-        object-fit: cover;
-    }
+  &__hero {
+    width: 59vw;
+    object-fit: cover;
+  }
 }

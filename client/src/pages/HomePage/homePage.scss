@@ -2,46 +2,42 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-
 .home-page {
-    height: 75vh;
-    @include route-margins;
+  height: 75vh;
+  @include route-margins;
 
-    &__hero {
-        width: 50vw;
-        object-fit: cover;
-    }
+  &__hero {
+    width: 50vw;
+    object-fit: cover;
+  }
 
-    &__container {
-        display: flex;
-    }
+  &__container {
+    display: flex;
+  }
 
-    &__header {
-        color: $primarycolor;
-    }
+  &__header {
+    color: $primarycolor;
+  }
 
+  &__footer {
+    border: 2px solid #424c55;
+    width: 48%;
+  }
 
-    &__footer {
-        border: 2px solid #424C55;
-        width: 48%;
-    }
+  &__socials {
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
 
-    &__socials {
-        align-content: center;
-        justify-content: space-between;
-        margin-bottom: 5rem;
+  &__about {
+    @include flex-row;
+    justify-content: center;
+    margin-top: 33rem;
+  }
 
-    }
-
-    &__about {
-        @include flex-row;
-        justify-content: center;
-        margin-top: 33rem;
-        
-    }
-
-    &__saying {
-        @include flex-center;
-        font-size: 4rem;
-    }
+  &__saying {
+    @include flex-center;
+    font-size: 4rem;
+  }
 }

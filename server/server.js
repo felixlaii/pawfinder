@@ -54,5 +54,5 @@ app.get("/users", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  (`Server is running on ${PORT}`);
+  `Server is running on ${PORT}`;
 });

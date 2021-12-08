@@ -27,7 +27,6 @@ router.get("/current", authorize, (req, res) => {
     userId: foundUser.userId,
     animalType: foundUser.animalType,
     breed: foundUser.breedType,
-    // age: foundUser.age,
   });
 });
 
@@ -81,7 +80,6 @@ router.post("/register", (req, res) => {
   const password = req.body.password;
   const animalType = req.body.animalType;
   const breed = req.body.breed;
-  // const age = req.body.age;
 
   if (
     !firstName ||
@@ -90,7 +88,6 @@ router.post("/register", (req, res) => {
     !password ||
     !animalType ||
     !breed
-    // !age
   ) {
     return res.status(400).json({
       message: "registration requires all fields",
@@ -104,7 +101,6 @@ router.post("/register", (req, res) => {
     password: password,
     animalType: animalType,
     breed: breed,
-    // age: age,
   };
 
   knex("users")
@@ -115,7 +111,6 @@ router.post("/register", (req, res) => {
       password: newUser.password,
       animalType: newUser.animalType,
       breedType: newUser.breed,
-      // age: newUser.age,
     })
     .then((_result) => {
       knex("users").then((data) => {

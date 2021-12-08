@@ -10,21 +10,19 @@ export default class AdoptionPage extends Component {
   selectedAnimal = (id) => {
     axios
       .get(`http://localhost:8080/${id}`)
-      .then((response) => { 
+      .then((response) => {
         this.setState({
-          selectedAnimal: response.data
+          selectedAnimal: response.data,
         });
-    
       })
-      .catch((error) => (error));
+      .catch((error) => error);
   };
 
   componentDidMount() {
-        const animalId =
-          this.props.match.params.id; 
+    const animalId = this.props.match.params.id;
 
-        this.selectedAnimal(animalId);
-      }
+    this.selectedAnimal(animalId);
+  }
 
   render() {
     if (!this.state.selectedAnimal) {
@@ -37,21 +35,21 @@ export default class AdoptionPage extends Component {
     return (
       <div className="adoption-page">
         <ul className="adoption-page__list">
-            <AdoptionItem
-              key={this.state.selectedAnimal.id}
-              id={this.state.selectedAnimal.id}
-              species={this.state.selectedAnimal.species}
-              breed={this.state.selectedAnimal.breeds.primary}
-              color={this.state.selectedAnimal.colors.primary}
-              age={this.state.selectedAnimal.age}
-              gender={this.state.selectedAnimal.gender}
-              name={this.state.selectedAnimal.name}
-              description={this.state.selectedAnimal.description}
-              photos={this.state.selectedAnimal.photos}
-              status={this.state.selectedAnimal.status}
-            />
+          <AdoptionItem
+            key={this.state.selectedAnimal.id}
+            id={this.state.selectedAnimal.id}
+            species={this.state.selectedAnimal.species}
+            breed={this.state.selectedAnimal.breeds.primary}
+            color={this.state.selectedAnimal.colors.primary}
+            age={this.state.selectedAnimal.age}
+            gender={this.state.selectedAnimal.gender}
+            name={this.state.selectedAnimal.name}
+            description={this.state.selectedAnimal.description}
+            photos={this.state.selectedAnimal.photos}
+            status={this.state.selectedAnimal.status}
+          />
         </ul>
       </div>
-      )
-    }
+    );
+  }
 }

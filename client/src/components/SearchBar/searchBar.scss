@@ -2,10 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
 
-
 .adoption-search {
-    &__input {
-        border-radius: 1rem;
-        width: 10rem;
-    }
+  &__input {
+    border-radius: 1rem;
+    width: 10rem;
+  }
 }

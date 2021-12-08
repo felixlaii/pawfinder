@@ -1,12 +1,11 @@
 import axios from "axios";
-import Input from "../../components/Input/Input";
 import { Link } from "react-router-dom";
-import "../SignUp/signUp.scss";
-import "../../components/Input/input.scss";
 import SignUpHero from "../../assets/images/signin-hero.jpeg";
 import SignUpIcon from "../../assets/icons/kitty-signup.png";
-import "../../components/Input/input.scss";
+import Input from "../../components/Input/Input";
 import DropDown from "../../components/DropDown/DropDown";
+import "../SignUp/signUp.scss";
+import "../../components/Input/input.scss";
 
 function SignUp(props) {
   const handleSignUp = (e) => {
