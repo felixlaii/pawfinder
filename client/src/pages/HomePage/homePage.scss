@@ -28,6 +28,10 @@
     align-content: center;
     justify-content: space-between;
     margin-bottom: 5rem;
+
+    &-contact {
+      padding-left: 3rem
+    }
   }
 
   &__about {
@@ -39,5 +43,13 @@
   &__saying {
     @include flex-center;
     font-size: 4rem;
+    margin-left: 4rem;
+    color: $slogan-color;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rem;
   }
 }
