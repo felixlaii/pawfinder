@@ -6,30 +6,22 @@
 .results-item {
     
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-
-    }
-
     &__info {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;        
+        @include flex-row;
     }
 
     &__card {
-        border: 1px solid $primarydark;
+        @include flex-row;
+        border: 2px solid $primarycolor;
         @include route-margins;
         border-radius: 6px;
         width: 27vw;
+        overflow: auto;
     }
 
     &__item {
-        flex-grow: 1;
-        position: relative;
-
+        display: flex;
+        justify-content: space-between;
     }
 
     &__image {
@@ -40,5 +32,15 @@
         border-radius: 6px;
         padding-bottom: 1rem;
         vertical-align: bottom;
+    }
+
+    &__listwrapper {
+        @include flex-row;
+        list-style: none;
+        height: 40rem;
+        overflow: scroll;
+        margin-top: 5rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
     }
 }

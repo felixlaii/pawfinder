@@ -68,7 +68,7 @@ class ResultsPage extends Component {
         <button className="paw-dashboard__button" onClick={this.handleLogOut}>
           Log Out
         </button>
-
+<div className="results-item__listwrapper">
         <ul className="results-item__list">
           <li className="results-item__item">
             {filteredBreed.map((animal) => (
@@ -84,6 +84,8 @@ class ResultsPage extends Component {
             ))}
           </li>
         </ul>
+        </div>
+        <button className="paw-dashboard__button">more options</button>
       </div>
     );
   }

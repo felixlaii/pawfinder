@@ -26,7 +26,6 @@ function ResultsItem({ name, age, photos, id }) {
                 alt="dog placeholder"
               />
             </Link>
-             
           </ul>
         </div>
       </div>
