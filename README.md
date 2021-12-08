@@ -29,13 +29,18 @@ Back-end setup:
     $ npm install axios jsonwebtoken express cors
 
 4. Run Migrations
-$ npm run migrate
+$ npx migrate:latest
 
 5. Run seeds
-$ npm run seed
+$ npx knex seed:run
 
 6. Set up environment variables:
-PORT=<PORT_NUMBER>
+Rename `.env_sample` to `.env` and change placeholder values with your own.
+   PORT=8080
+   JWT_SECRET=<SECRET KEY>
+   DB_HOST=<HOST ADDRESS>
+   DB_USER=<YOUR DB USERNAME>
+   DB_PSWD=<YOUR DB PASSWORD>
 
 7. Start the server:
 $ npx nodemon server.js
@@ -48,3 +53,4 @@ Set up Front-End:
 
 9. Start React-App
 $ npm start
+
