@@ -11,6 +11,7 @@ function AdoptionItem({
   description,
   photos,
   status,
+  url,
 }) {
   if (photos.length === 0) {
     photos = DogPlaceHolder;
@@ -71,7 +72,9 @@ function AdoptionItem({
         <Link to="/results">
           <button className="adoption-item__submit">go back</button>
         </Link>
-        <button className="adoption-item__submit">adopt!</button>
+        <a className="adoption-item__submit" href={url} target="_blank">
+          adopt {name} now!
+        </a>
       </div>
     </div>
   );

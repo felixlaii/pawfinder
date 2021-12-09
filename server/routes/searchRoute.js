@@ -17,7 +17,6 @@ router.get("/species/:species", (req, res) => {
           },
         })
         .then((response) => {
-          console.log(response);
           let filteredAnimals = response.data.animals.filter(
             (animal) => animal.type.toLowerCase() === req.params.species
           );

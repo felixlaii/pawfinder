@@ -10,7 +10,7 @@ export default class AdoptionPage extends Component {
   selectedAnimal = (id) => {
     axios
       .get(`http://localhost:8080/${id}`)
-      .then((response) => {
+      .then((response) => { console.log(response)
         this.setState({
           selectedAnimal: response.data,
         });
@@ -47,6 +47,7 @@ export default class AdoptionPage extends Component {
             description={this.state.selectedAnimal.description}
             photos={this.state.selectedAnimal.photos}
             status={this.state.selectedAnimal.status}
+            url={this.state.selectedAnimal.url}
           />
         </ul>
       </div>
