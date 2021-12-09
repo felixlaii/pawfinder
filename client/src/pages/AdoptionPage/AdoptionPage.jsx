@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AdoptionItem from "../../components/AdoptionItem/AdoptionItem";
+import '../../styles/partials/_global.scss'
+
 
 export default class AdoptionPage extends Component {
   state = {
@@ -28,7 +30,7 @@ export default class AdoptionPage extends Component {
     if (!this.state.selectedAnimal) {
       return (
         <div>
-          <p className="loading">Loading...</p>
+          <h1 className="pawfinder__loading">ruff...no more pets, try again!</h1>
         </div>
       );
     }

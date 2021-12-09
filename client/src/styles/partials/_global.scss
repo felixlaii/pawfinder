@@ -1,6 +1,14 @@
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+
 
 body {
   font-family: "lemonmilk";
   width: 100%;
+}
+
+.pawfinder__loading{
+  font-size: 1.3rem;
+  color: $primarycolor;
+  margin-left: 8rem;
 }

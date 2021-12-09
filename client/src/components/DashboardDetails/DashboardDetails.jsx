@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./dashboardDetails.scss";
 import DashboardHero from "../../assets/images/dashboard-hero.jpg";
+import "./dashboardDetails.scss";
+import '../../styles/partials/_global.scss'
 
 export default class DashboardDetails extends Component {
   state = {
@@ -34,7 +35,7 @@ export default class DashboardDetails extends Component {
     if (!this.state.userList)
       return (
         <div>
-          <p>"loading..."</p>
+          <h1 className="pawfinder__loading">ruff...no more pets, try again!</h1>
         </div>
       );
     return (

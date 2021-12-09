@@ -1,17 +1,14 @@
-import React from "react";
 import axios from "axios";
-import DashboardDetails from "../../components/DashboardDetails/DashboardDetails";
-import AccountIcon from "../../assets/icons/account-icon.png";
-import "./dashboard.scss";
+import React, { Component } from "react";
+import './userWelcome.scss'
 import '../../styles/partials/_global.scss'
 
 
-class Dashboard extends React.Component {
+export default class UserWelcome extends Component {
   state = {
     isLoading: true,
     userInfo: {},
   };
-
   componentDidMount() {
     let token = sessionStorage.getItem("authToken");
 
@@ -27,6 +24,7 @@ class Dashboard extends React.Component {
             userInfo: res.data,
             isLoading: false,
           });
+          const userInfo = res.data;
         });
     } else {
       this.props.history.push("/login");
@@ -46,26 +44,23 @@ class Dashboard extends React.Component {
     return isLoading ? (
       <h1 className="pawfinder__loading">ruff...no more pets, try again!</h1>
     ) : (
-      <div className="paw-dashboard">
-        <div className="paw-dashboard__header">
-          <h2 className="paw-dashboard__loggedin">
-            Welcome! {userInfo.firstName} {userInfo.lastName}
-          </h2>
-          <div className="paw-dashboard__wrapper">
-            <img
-              className="paw-dashboard__icon"
-              src={AccountIcon}
-              alt="account icon"
-            />
+      <div className="user-welcome">
+        <div className="user-welcome__container">
+          <div className="user-welcome__header">
+            <h1 className="user-welcome__title">
+              welcome {userInfo.firstName} {userInfo.lastName}!
+            </h1>
           </div>
-          <button className="paw-dashboard__button" onClick={this.handleLogOut}>
-            Log Out
-          </button>
+          <div className="user-welcome__submit">
+            <button
+              className="user-welcome__button"
+              onClick={this.handleLogOut}
+            >
+              Log Out
+            </button>
+          </div>
         </div>
-        <DashboardDetails userId={this.state.userInfo.userId} />
       </div>
     );
   }
 }
-
-export default Dashboard;

@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import axios from "axios";
 import DropDownNav from "../DropDownNav/DropDownNav";
+import '../../styles/partials/_global.scss'
 
 class DropDown extends Component {
   state = {
@@ -26,7 +27,7 @@ class DropDown extends Component {
     if (!this.state.animalList)
       return (
         <div>
-          <p className="loading">Loading...</p>
+          <h1 className="pawfinder__loading">ruff...no more pets, try again!</h1>
         </div>
       );
 

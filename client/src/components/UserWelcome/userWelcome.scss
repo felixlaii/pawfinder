@@ -1,0 +1,28 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.user-welcome {
+
+    &__container{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title{
+        font-size: 1.3rem;
+        color: $primarycolor;
+        margin-left: 8rem;
+    }
+
+    &__button {
+        font-family: "lemonmilk";
+        margin-left: 48rem;
+        font-size: 1rem;
+        padding: 0.3rem 5rem 0.3rem 1.3rem;
+        border: none;
+        background-color: $primarylight;
+        color: $primarycolor;
+        text-decoration: underline;
+    }
+}

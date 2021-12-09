@@ -2,6 +2,9 @@ import React from "react";
 import { Component } from "react";
 import axios from "axios";
 import ResultsItem from "../../components/ResultsItem/ResultsItem";
+import UserWelcome from "../../components/UserWelcome/UserWelcome";
+import '../../styles/partials/_global.scss'
+
 
 class ResultsPage extends Component {
   state = {
@@ -53,7 +56,7 @@ class ResultsPage extends Component {
     if (!this.state.animalList)
       return (
         <div>
-          <p className="loading">Loading...</p>
+          <h1 className="pawfinder__loading">ruff...no more pets, try again!</h1>
         </div>
       );
     const filteredBreed = this.state.animalList.filter(
@@ -61,17 +64,19 @@ class ResultsPage extends Component {
     );
 
     return isLoading ? (
-      <h1>Loading...</h1>
+      <h1 className="pawfinder__loading">ruff...no more pets, try again!</h1>
     ) : (
       <div className="results-page">
-        <button className="paw-dashboard__button" onClick={this.handleLogOut}>
+        {/* <button className="paw-dashboard__button" onClick={this.handleLogOut}>
           Log Out
         </button>
         <div className="paw-dashboard__header">
           <h2 className="paw-dashboard__resultsheader">
             {userInfo.firstName} {userInfo.lastName}s preferences
           </h2>
-        </div>
+        </div> */}
+        <UserWelcome 
+        />
         <div className="results-item__listwrapper">
           <ul className="results-item__list">
             <li className="results-item__item">

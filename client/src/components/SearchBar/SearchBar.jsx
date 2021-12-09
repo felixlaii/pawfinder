@@ -18,7 +18,6 @@ export default class SearchBar extends Component {
     axios
       .get(`http://localhost:8080/search/species/${searchQuery}`)
       .then((response) => {
-        console.log(response);
         this.setState({
           errorLoading: false,
           animalList: response.data,
