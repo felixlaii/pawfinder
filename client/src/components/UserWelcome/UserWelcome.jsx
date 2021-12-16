@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import './userWelcome.scss'
 import '../../styles/partials/_global.scss'
 
@@ -51,6 +52,9 @@ export default class UserWelcome extends Component {
               welcome {userInfo.firstName} {userInfo.lastName}!
             </h1>
           </div>
+          <div className="results-page__searchbar">
+      
+        </div>
           <div className="user-welcome__submit">
             <button
               className="user-welcome__button"

@@ -33,10 +33,11 @@ function PageHeader() {
             <li className="page-header__item">sign up</li>
           </Link>
 
-          <li className="page-header__item">
-            {" "}
-            <SearchBar />{" "}
-          </li>
+          <li className="page-header__item--divider">/</li>
+
+          <Link to="/gallery">
+            <li className="page-header__item">search</li>
+          </Link>
         </ul>
       </nav>
     </div>

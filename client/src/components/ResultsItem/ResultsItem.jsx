@@ -3,7 +3,7 @@ import DogPlaceHolder from "../../assets/images/placeholder-results.jpg";
 import "./resultsItem.scss";
 import { Link } from "react-router-dom";
 
-function ResultsItem({ name, age, photos, id }) {
+function ResultsItem({ name, photos, id }) {
   if (photos.length === 0) {
     photos = DogPlaceHolder;
   } else {
@@ -17,7 +17,7 @@ function ResultsItem({ name, age, photos, id }) {
           <ul className="results-item__list">
             <div className="results-item__info">
               <li className="results-item__item">{name}</li>
-              <li className="results-item__item">{age}</li>
+              {/* <li className="results-item__item">{age}</li> */}
             </div>
             <Link to={`/adoption/${id}`}>
               <img

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 const knex = require("knex")(require("../knexfile").development);
 
-router.get("/species/:species", (req, res) => {
+router.get("/species/:searchQuery", (req, res) => {
   knex
     .select("*")
     .from("token")
@@ -11,14 +11,14 @@ router.get("/species/:species", (req, res) => {
     .then((data) => {
       data = data[0];
       axios
-        .get("https://api.petfinder.com/v2/animals", {
+        .get("https://api.petfinder.com/v2/animals?limit=100", {
           headers: {
             Authorization: `Bearer ${data.auth_token}`,
           },
         })
         .then((response) => {
           let filteredAnimals = response.data.animals.filter(
-            (animal) => animal.type.toLowerCase() === req.params.species
+            (animal) => animal.type.toLowerCase() === req.params.searchQuery
           );
           res.status(200).json(filteredAnimals);
         });

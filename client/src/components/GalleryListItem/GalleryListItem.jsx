@@ -1,20 +1,19 @@
 import React from "react";
+import GalleryList from "../GalleryList/GalleryList";
 
-function GalleryListItem({ name, age }) {
+function GalleryListItem({ search }) { console.log(search)
   return (
-    <div className="gallery-item">
       <div className="gallery-item__wrapper">
-        <div className="gallery-item__card">
-          <ul className="gallery-item__list">
-            <div className="gallery-item__info">
-              <li className="gallery-item__item">{name}</li>
-              <li className="gallery-item__item">{age}</li>
-            </div>
-            <ion-icon name="paw-outline"></ion-icon>
-          </ul>
+            {search.map(item => 
+            <GalleryList 
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            age={item.age}
+            photos={item.photos}/>
+              )}
         </div>
-      </div>
-    </div>
+  
   );
 }
 

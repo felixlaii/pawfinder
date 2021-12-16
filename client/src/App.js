@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage/HomePage'
 import ResultsPage from './pages/ResultsPage/ResultsPage'
 import DashBoard from './pages/Dashboard/Dashboard.jsx'
 import SearchBar from './components/SearchBar/SearchBar'
-import Gallery from './components/GalleryList/GalleryList.jsx'
+import GalleryList from './components/GalleryList/GalleryList.jsx'
 import GalleryListItem from './components/GalleryListItem/GalleryListItem'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
@@ -24,9 +24,9 @@ function App() {
 
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/adoption/:id" component={AdoptionPage} />
-                    {/* <Route path="/search" component={SearchBar} /> */}
-                    <Route path="/search/:searchQuery" component={Gallery} />
-                    <Route path="/gallery" component={GalleryListItem} />
+                    
+                    {/* <Route path="/search" component={GalleryList} /> */}
+                    <Route path="/gallery" component={SearchBar} />
 
                     <Route path="/dashboard" component={DashBoard} />
                     <Route path="/dashboard/:details" component={DashboardDetails} />

@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./searchBar.scss";
+import GalleryListItem from "../GalleryListItem/GalleryListItem";
+import GalleryList from "../GalleryList/GalleryList";
 
 export default class SearchBar extends Component {
   state = {
+    isLoading: false,
     searchQuery: "",
-    animalList: null,
+    animalList: [],
     errorLoading: false,
   };
 
-  searchRef = React.createRef();
   handleQueryChange = (e) => {
     e.preventDefault();
+    this.setState({
+      searchQuery: e.target.value,
+    });
   };
 
   getAnimals = (searchQuery) => {
@@ -19,6 +24,7 @@ export default class SearchBar extends Component {
       .get(`http://localhost:8080/search/species/${searchQuery}`)
       .then((response) => {
         this.setState({
+          isLoading: false,
           errorLoading: false,
           animalList: response.data,
         });
@@ -30,19 +36,41 @@ export default class SearchBar extends Component {
       });
   };
 
+  componentDidMount() {
+    const searchQuery = this.props.match.params.searchQuery;
+
+    if (searchQuery) {
+      this.getAnimals(searchQuery);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const searchQuery = this.state.searchQuery;
+    const prevSearchQuery = prevState.searchQuery;
+
+    if (searchQuery !== prevSearchQuery) {
+      this.getAnimals(searchQuery);
+    }
+  }
+
   render() {
     return (
       <div className="adoption-search">
-        <form>
-          <input
-            ref={this.searchRef}
-            id="search"
-            name="search"
-            type="text"
-            placeholder="find your pawfect friend..."
-            className="adoption-search__input"
-          />
-        </form>
+        <input
+          onChange={this.handleQueryChange}
+          id="search"
+          name="search"
+          type="text"
+          value={this.state.searchQuery}
+          placeholder="find your pawfect friend..."
+          className="adoption-search__input"
+        />
+
+        {this.state.searchQuery ? (
+          <GalleryListItem search={this.state.animalList} />
+        ) : (
+          <p> hello </p>
+        )}
       </div>
     );
   }
