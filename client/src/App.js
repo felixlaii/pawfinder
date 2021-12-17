@@ -4,8 +4,6 @@ import HomePage from './pages/HomePage/HomePage'
 import ResultsPage from './pages/ResultsPage/ResultsPage'
 import DashBoard from './pages/Dashboard/Dashboard.jsx'
 import SearchBar from './components/SearchBar/SearchBar'
-import GalleryList from './components/GalleryList/GalleryList.jsx'
-import GalleryListItem from './components/GalleryListItem/GalleryListItem'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import DashboardDetails from './components/DashboardDetails/DashboardDetails.jsx'
@@ -25,7 +23,6 @@ function App() {
                     <Route path="/results" component={ResultsPage} />
                     <Route path="/adoption/:id" component={AdoptionPage} />
                     
-                    {/* <Route path="/search" component={GalleryList} /> */}
                     <Route path="/gallery" component={SearchBar} />
 
                     <Route path="/dashboard" component={DashBoard} />

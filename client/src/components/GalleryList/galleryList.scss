@@ -4,22 +4,16 @@
 
 .gallery-item {
   &__info {
-    @include flex-row;
+    list-style: none;
   }
 
   &__card {
-    @include flex-row;
     border: 2px solid $primarycolor;
     @include route-margins;
     border-radius: 6px;
     width: 26vw;
+    height: 26vh;
     overflow: auto;
-  }
-
-  &__item {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 2rem;
   }
 
   &__image {
@@ -32,13 +26,12 @@
     vertical-align: bottom;
   }
 
-  &__listwrapper {
+  &__wrapper {
     @include flex-row;
     list-style: none;
-    height: 40rem;
+    height: 30rem;
     overflow: scroll;
     margin-top: 5rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-right: 2rem;
   }
 }

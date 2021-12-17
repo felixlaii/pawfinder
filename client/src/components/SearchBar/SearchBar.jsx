@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./searchBar.scss";
 import GalleryListItem from "../GalleryListItem/GalleryListItem";
-import GalleryList from "../GalleryList/GalleryList";
 
 export default class SearchBar extends Component {
   state = {
