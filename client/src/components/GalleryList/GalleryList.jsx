@@ -12,12 +12,12 @@ function GalleryList({ key, id, name, photos }) {
   return (
     <div className="gallery-item">
     <div className="gallery-item__wrapper">
-      <div className="gallery-item__card">
+      <div className="gallery-item__card gallery-item__card-hover">
         <ul className="gallery-item__list">
-          <div className="gallery-item__info">
+          {/* <div className="gallery-item__info"> */}
             <li className="gallery-item__item">{name}</li>
             {/* <li className="gallery-item__item">{age}</li> */}
-          </div>
+          {/* </div> */}
           <Link to={`/adoption/${id}`}>
             <img
               className="gallery-item__image"
@@ -27,7 +27,7 @@ function GalleryList({ key, id, name, photos }) {
           </Link>
         </ul>
       </div>
-    </div>
+      </div>
   </div>
   );
 }

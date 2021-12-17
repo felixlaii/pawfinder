@@ -30,9 +30,30 @@
   }
 
   &__item {
+    width: 3rem;
+    padding: 0.5rem 0.5rem;
     list-style: none;
     text-decoration: none;
     color: $primarycolor;
+    transition: all 0.5s;
+    transition-property: color;
+
+    // &::after {
+    //   position: absolute;
+    //   left: 80%;
+    //   top: 54%;
+    //   right: 0;
+    //   bottom: 0;
+    //   opacity: 0;
+    //   transform: translate(-50%, -50%);
+    // }
+
+    &:hover {
+      // background-color: #d7c4af;
+      transition: all 0.5s;
+      color: #d7c4af;
+    }
+
 
     &--divider {
       list-style: none;
@@ -42,16 +63,14 @@
     }
   }
 
-  &__item:link {
-    text-decoration: none;
-  }
-
   &__item:active {
     color: $primarycolor;
     text-decoration: none;
   }
 
   &__item:hover {
-    text-decoration: underline;
+    text-decoration: underline #d7c4af;
+    color: #d7c4af;
+
   }
 }
