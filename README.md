@@ -1,3 +1,6 @@
+
+<img width="1092" alt="pawfinder-static" src="https://user-images.githubusercontent.com/91552420/206569608-de512dd9-91df-4c8b-8d18-d0310ee37668.png">
+
 for Pet Lovers
 
 Making the process of finding your pawfect friend through adoption / rescue agencies quicker by compiling all information in one application. 
